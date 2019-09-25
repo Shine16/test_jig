@@ -103,14 +103,14 @@ class ADS1256:
                 
                 break
         if(i >= 400000):
-            print "Time Out ...\r\n"
+            print ("Time Out ...\r\n")
         
         
     def ADS1256_ReadChipID(self):
         self.ADS1256_WaitDRDY()
         id = self.ADS1256_Read_data(REG_E['REG_STATUS'])
         id = id[0] >> 4
-        # print 'ID',id
+         
         return id
         
     #The configuration parameters of ADC, gain and data rate
@@ -155,9 +155,11 @@ class ADS1256:
         self.ADS1256_reset()
         id = self.ADS1256_ReadChipID()
         if id == 3 :
-            print"ID Read success  "
+            pass
+            #print("ID Read success  ")
         else:
-            print"ID Read failed   "
+            pass
+            #print("ID Read failed   ")
             return -1
         self.ADS1256_ConfigADC(ADS1256_GAIN_E['ADS1256_GAIN_1'], ADS1256_DRATE_E['ADS1256_30000SPS'])
         return 0

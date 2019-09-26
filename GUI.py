@@ -6,21 +6,21 @@ from tkinter import Frame
 from tkinter import Tk	
 from tkinter import Button
 from tkinter import Label
+from tkinter import Entry
 
 import time
 import ADS1256
 import RPi.GPIO as GPIO
+import os
+import sys
 	
-class Application(Frame):
-	
-
-		
+class Application(Frame):	
 		
 	def __init__(self, master=None):
 		
 		self.master=master
 		self.master.title("Tag Tester")
-		self.master.geometry("400x350")
+		self.master.geometry("480x450")
 		
 		self.vbatt=StringVar()
 		self.vcoil=StringVar()
@@ -50,10 +50,22 @@ class Application(Frame):
 		x=1
 		y=0
 		self.b1=Button(self.master,  text="Start Test", command=self.startTest)
-		self.b1.grid(row=y, column=x, pady=3)
+		self.b1.grid(row=y, column=x, pady=5)
 		
 		x=0
-		y=1
+		y=1		
+		self.el1=Label(self.master, text="Serial Number")
+		self.el1.grid(row=y, column=x,pady=5)
+		
+		x=1
+		self.e1=Entry(self.master)
+		self.e1.grid(row=y, column=x)#, pady=3)
+		
+		tabley=3
+		
+		
+		x=0
+		y=2
 		self.d1=Label(self.master, textvariable=self.currentAction)
 		self.d1.grid(row=y, column=x, columnspan=4, pady=8)
 				
@@ -71,7 +83,7 @@ class Application(Frame):
 		self.l10=Label(self.master, text="PA4 bleeding high")
 		
 		x=0
-		y=2
+		y=tabley
 		self.l0.grid(row=y, column=x)
 		y+=1			
 		self.l1.grid(row=y, column=x)
@@ -108,7 +120,7 @@ class Application(Frame):
 		self.ll10=Label(self.master, text=">2.7 V")
 		
 		x=1
-		y=2	
+		y=tabley
 		self.ll0.grid(row=y, column=x)
 		y+=1			
 		self.ll1.grid(row=y, column=x)
@@ -146,7 +158,7 @@ class Application(Frame):
 		
 		
 		x=2
-		y=2				
+		y=tabley				
 		self.lll0.grid(row=y, column=x)
 		y+=1
 		self.lll1.grid(row=y, column=x)
@@ -183,7 +195,7 @@ class Application(Frame):
 		self.llll10=Label(self.master, text="       ", bg= "white")
 		
 		x=3
-		y=2	
+		y=tabley	
 		self.llll0.grid(row=y, column=x)
 		y+=1
 		self.llll1.grid(row=y, column=x)
@@ -206,13 +218,10 @@ class Application(Frame):
 		y+=1
 		self.llll10.grid(row=y, column=x)
 				
-				
-				
-				
-				
+
 		y+=2		
 		self.exit=Button(self.master,  text="Exit",command=self.master.destroy)#.pack(side="top",pady=40)		
-		self.exit.grid(row=y, column=1)
+		self.exit.grid(row=y, column=1,pady=10)
 			 
 				 
 
@@ -224,6 +233,22 @@ class Application(Frame):
 			
 			
 	def startTest(self): 
+		
+		#make test report directory if not exist
+		try:
+			os.mkdir('test reports')
+		except FileExistsError:
+			pass
+		
+	 
+		serial_number=self.e1.get()
+
+		test_Report=open(str(os.path.dirname(__file__))+"/test reports/"+serial_number+".txt","a")
+		test_Report.write("Tag Test Report\n")
+		test_Report.write("Serial Number:\t\t"+str(serial_number)+"\n")
+		test_Report.write("Time:\t\t\t"+str(time.asctime())+"\n\n")
+		
+		
 		self.waitdelay = 0.5#1
 		
 		self.vbatt.set("0 V")
@@ -252,125 +277,235 @@ class Application(Frame):
 		self.master.update()
 		time.sleep(1)
 				
-		ADC_values=read_ADC()
-		count=0
-		for x in ADC_values:
-				
-			ADC_values[count]=round(ADC_values[count]*5.0/0x7fffff,2)
-			#print(ADC_values[count])
-			count=count+1 
+		ADC_values=self.read_ADC()
+		
 			
 		self.currentAction.set("Reading Values")
 				
 		self.vbatt.set(str(ADC_values[0])+" V")
 		self.vcoil.set(str(ADC_values[1])+" V")
 		self.vmcu.set(str(ADC_values[2])+" V")
-		self.vreg.set(str(ADC_values[3])+" V")
+		self.vreg.set(str(ADC_values[3])+" V")		
 
-			
+ 		
 		#Vbatt
+		test_Report.write("Vbatt:\t\t\t"+str(ADC_values[0])+" V\t")
 		if ADC_values[0]>3 and ADC_values[0] < 4.2:
 			self.llll1.config(bg="green")
+			test_Report.write("pass\n")
 		else:
 			self.llll1.config(bg="red")
+			test_Report.write("fail\n")
 				
-		#Vcoil			
-		if ADC_values[0]>4.9 and ADC_values[0] < 5.1:
+		#Vcoil	
+		test_Report.write("Vcoil:\t\t\t"+str(ADC_values[1])+" V\t")		
+		if ADC_values[1]>4.9 and ADC_values[1] < 5.1:
 			self.llll2.config(bg="green")
+			test_Report.write("pass\n")
 		else:
 			self.llll2.config(bg="red")	
+			test_Report.write("fail\n")
 				
 		#Vmcu			
-		if ADC_values[0]>3.2 and ADC_values[0] < 3.4:
+		test_Report.write("Vmcu:\t\t\t"+str(ADC_values[2])+" V\t")
+		if ADC_values[2]>3.2 and ADC_values[2] < 3.4:
 			self.llll3.config(bg="green")
+			test_Report.write("pass\n")
 		else:
 			self.llll3.config(bg="red")	
+			test_Report.write("fail\n")
 				
 		#Vreg			
-		if ADC_values[0]>1.7 and ADC_values[0] < 1.9:
+		test_Report.write("Vreg:\t\t\t"+str(ADC_values[3])+" V\t")
+		if ADC_values[3]>1.7 and ADC_values[3] < 1.9:
 			self.llll4.config(bg="green")
+			test_Report.write("pass\n")
 		else:
 			self.llll4.config(bg="red")	
+			test_Report.write("fail\n")
 			
 
-		#PF6 LED low					
-		self.currentAction.set("Reading PF6 LED LOW")
-		self.master.update()
+		
+		samples=10
+		time_to_sample=1
+		
+		
+		
+		
+		
+		#PF6 LED low	
+		ADC_values[4]=self.read_sampleADC(4,samples,time_to_sample)#sample,time)#port,sample,time	
+		print(ADC_values[4])
+		
+		self.currentAction.set("Reading PF6 LED low")
+		self.master.update()			
 		time.sleep(self.waitdelay)
+		
+		test_Report.write("PF6 LED Low:\t\t"+str(ADC_values[4])+" V\t") 	 
 		self.led_low.set(str(ADC_values[4])+" V")
-		if ADC_values[0]>0 and ADC_values[0] < 0.5:
+		if ADC_values[4]>0 and ADC_values[4] < 0.5:
 			self.llll5.config(bg="green")
+			test_Report.write("pass\n")
 		else:
 			self.llll5.config(bg="red")
-			  
-		  
+			test_Report.write("fail\n") 
 		
 		
 
 			
 		#PF6 LED high
-		self.currentAction.set("Reading PF6 LED HIGH")
+		ADC_values[4]=self.read_sampleADC(4,samples,time_to_sample)
+		
+		test_Report.write("PF6 LED High:\t\t"+str(ADC_values[4])+" V\t")
+		self.currentAction.set("Reading PF6 LED high")
 		self.master.update()
 		time.sleep(self.waitdelay)
 		self.led_high.set(str(ADC_values[4])+" V")			
-		if ADC_values[0]>2.7 and ADC_values[0] < 5.1:
+		if ADC_values[4]>2.7 and ADC_values[4] < 5.1:
 			self.llll6.config(bg="green")
+			test_Report.write("pass\n")
 		else:
 			self.llll6.config(bg="red")	
+			test_Report.write("fail\n")
+		 
+			
 			
 		#PC10 vbatt sense low
+		ADC_values[5]=self.read_sampleADC(5,samples,time_to_sample)
+		
+		test_Report.write("PC10 vbatt sense low:\t"+str(ADC_values[5])+" V\t") 
 		self.currentAction.set("Reading PC10 vbatt sense LOW")
 		self.master.update()
 		time.sleep(self.waitdelay)
 		self.vbatt_sense_low.set(str(ADC_values[5])+" V")			
-		if ADC_values[0]>0 and ADC_values[0] < 0.5:
+		if ADC_values[5]>0 and ADC_values[5] < 0.5:
 			self.llll7.config(bg="green")
+			test_Report.write("pass\n")
 		else:
 			self.llll7.config(bg="red")			
+			test_Report.write("fail\n")
 			
 		#PC10 vbatt sense high	
+		ADC_values[5]=self.read_sampleADC(5,samples,time_to_sample)
+		
+		test_Report.write("PC10 vbatt sense high:\t"+str(ADC_values[5])+" V\t") 
 		self.currentAction.set("Reading PC10 vbatt sense HIGH")
 		self.master.update()
 		time.sleep(self.waitdelay)
 		self.vbatt_sense_high.set(str(ADC_values[5])+" V")		
-		if ADC_values[0]>2.7 and ADC_values[0] < 5.1:
+		if ADC_values[5]>2.7 and ADC_values[5] < 5.1:
 			self.llll8.config(bg="green")
+			test_Report.write("pass\n")
 		else:
 			self.llll8.config(bg="red")	
+			test_Report.write("fail\n")
+		
 			
 		#PA4 bleeding low
+		ADC_values[6]=self.read_sampleADC(6,samples,time_to_sample)
+		
+		test_Report.write("PA4 bleeding low:\t"+str(ADC_values[6])+" V\t") 
 		self.currentAction.set("Reading PA4 bleeding LOW")
 		self.master.update()
 		time.sleep(self.waitdelay)
 		self.bleeding_low.set(str(ADC_values[6])+" V")			
-		if ADC_values[0]>0 and ADC_values[0] < 0.5:
+		if ADC_values[6]>0 and ADC_values[6] < 0.5:
 			self.llll9.config(bg="green")
+			test_Report.write("pass\n")
 		else:
 			self.llll9.config(bg="red")
+			test_Report.write("fail\n")
+		 
 			
-		#PA4 bleeding high			
+		#PA4 bleeding high	
+		ADC_values[6]=self.read_sampleADC(6,samples,time_to_sample)
+		
+		test_Report.write("PA4 bleeding high:\t"+str(ADC_values[6])+" V\t") 		
 		self.currentAction.set("Reading PA4 bleeding HIGH")
 		self.master.update()
 		time.sleep(self.waitdelay)
 		self.bleeding_high.set(str(ADC_values[6])+" V")	
-		if ADC_values[0]>2.7 and ADC_values[0] < 5.1:
+		if ADC_values[6]>2.7 and ADC_values[6] < 5.1:
 			self.llll10.config(bg="green")
+			test_Report.write("pass\n")
 		else:
 			self.llll10.config(bg="red")		
-		self.currentAction.set("Test Complete")				
+			test_Report.write("fail\n")
 		
 		
-def read_ADC():
-	try:
-		ADC = ADS1256.ADS1256()			
-		if (ADC.ADS1256_init() == -1):
-			pass
-		 
-		else:        
-			return ADC.ADS1256_GetAll()
-	except:
-		GPIO.cleanup()
-		print ("\r\nProgram end     ")
+		self.currentAction.set("Test Complete")	
+		
+		test_Report.close()
+			
 		
 		
+		
+		
+	def read_ADC(self):
+		try:
+			ADC = ADS1256.ADS1256()			
+			if (ADC.ADS1256_init() == -1):
+				pass
+			 
+			else:        
+				ADC_read=ADC.ADS1256_GetAll()
+				count=0
+				for x in ADC_read:					
+					ADC_read[count]=round(ADC_read[count]*5.0/0x7fffff,2)
+					count=count+1 
+				return ADC_read
+				
+		except:
+			GPIO.cleanup()
+			print ("\r\nProgram end     ")
+			
+			
+	def read_singleADC(self,port):
+		try:
+			ADC = ADS1256.ADS1256()
+			print(time.asctime())
+			return round(ADC.ADS1256_GetChannalValue(port)*5.0/0x7fffff,2)
+			
+		except:
+			GPIO.cleanup()
+			print ("\r\nProgram end     ")		
+			
+			
+			
+	def read_sampleADC(self,port,sample,times):
+		debug = True
+		listofSamples=[]
+		
+		try:
+			oldtime=time.time()
+			sampletime=times/sample
+			sampletime=sampletime-(sample*0.00005)
+			
+						
+			if sample<5:
+				sample=5
+				
+			ADC = ADS1256.ADS1256()
+			print("reading "+str(sample)+" samples on port "+str(port))
+			#if debug:
+				#print(sampletime)
+			
+			for x in range(sample):
+ 				listofSamples.append(round(ADC.ADS1256_GetChannalValue(port)*5.0/0x7fffff,2))
+ 				time.sleep(sampletime)
+ 				
+			listofSamples.sort()
+			middle=(sample/2)+1
+			middle=int(middle)			
+			print(listofSamples[middle])
+				
+			if debug:
+				print(time.time()-oldtime)
+			return listofSamples[middle]
+			
+		except:
+			GPIO.cleanup()
+			print ("\r\nProgram end     ")		
+		
+			
 		

@@ -110,14 +110,14 @@ class ADS1256:
         self.ADS1256_WaitDRDY()
         id = self.ADS1256_Read_data(REG_E['REG_STATUS'])
         id = id[0] >> 4
-         
+        # print 'ID',id
         return id
         
     #The configuration parameters of ADC, gain and data rate
     def ADS1256_ConfigADC(self, gain, drate):
         self.ADS1256_WaitDRDY()
         buf = [0,0,0,0,0,0,0,0]
-        buf[0] = (0<<3) | (1<<2) | (1<<1)
+        buf[0] = (0<<3) | (1<<2) | (0<<1)
         buf[1] = 0x08
         buf[2] = (0<<5) | (0<<3) | (gain<<0)
         buf[3] = drate
@@ -155,11 +155,9 @@ class ADS1256:
         self.ADS1256_reset()
         id = self.ADS1256_ReadChipID()
         if id == 3 :
-            pass
-            #print("ID Read success  ")
+            print("ID Read success  ")
         else:
-            pass
-            #print("ID Read failed   ")
+            print("ID Read failed   ")
             return -1
         self.ADS1256_ConfigADC(ADS1256_GAIN_E['ADS1256_GAIN_1'], ADS1256_DRATE_E['ADS1256_30000SPS'])
         return 0

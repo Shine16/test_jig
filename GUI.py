@@ -15,6 +15,7 @@ import os
 import sys
 import threading
 
+import currentsense
         
 class Application(Frame):       
 
@@ -26,10 +27,9 @@ class Application(Frame):
                 """
                 self.master=master
                 self.master.title("Tag Tester")
-                self.master.geometry("480x450")
+                self.master.geometry("480x490")
                 
                 self.vbatt=StringVar()
-                self.vcoil=StringVar()
                 self.vmcu=StringVar()
                 self.vreg=StringVar()
                 self.led_low=StringVar()
@@ -41,9 +41,12 @@ class Application(Frame):
                 self.currentAction=StringVar()
                 self.reset_time=StringVar()
                 self.vbatt2=StringVar()
+                self.cnew=StringVar() 
+                self.cprog=StringVar()
+                self.ccharge=StringVar()
+                self.vcoil=StringVar()
                 
-                self.vbatt.set("0 V")
-                self.vcoil.set("0 V")
+                self.vbatt.set("0 V")                
                 self.vmcu.set("0 V")
                 self.vreg.set("0 V")
                 self.led_low.set("0 V")
@@ -53,8 +56,13 @@ class Application(Frame):
                 self.bleeding_low.set("0 V")    
                 self.bleeding_high.set("0 V")   
                 self.reset_time.set("0 mS")
+                self.vcoil.set("0 V")
                 self.vbatt2.set("0 V")
-                
+                self.cnew.set("0 mA")
+                self.cprog.set("0 mA")
+                self.ccharge.set("0 mA")
+               
+                                
                 self.currentAction.set("Press Start Test to begin")              
         
                 x=1
@@ -82,24 +90,29 @@ class Application(Frame):
                 #First column
                 self.l0=Label(self.master, text="SIGNAL")
                 self.l1=Label(self.master, text="Vbatt ")
-                self.l2=Label(self.master, text="Vcoil")
-                self.l3=Label(self.master, text="Vmcu")
-                self.l4=Label(self.master, text="Vreg")
-                self.l5=Label(self.master, text="PF6 led low")
-                self.l6=Label(self.master, text="PF6 led high")
-                self.l7=Label(self.master, text="PC10 vbatt sense low")
-                self.l8=Label(self.master, text="PC10 vbatt sense high")
-                self.l9=Label(self.master, text="PA4 bleeding low")
-                self.l10=Label(self.master, text="PA4 bleeding high")
-                self.l11=Label(self.master, text="Reset timing")
-                self.l12=Label(self.master, text="Vbatt with Charger")
+                self.l2=Label(self.master, text="Vmcu")
+                self.l3=Label(self.master, text="Vreg")
+                self.l4=Label(self.master, text="PF6 led low")
+                self.l5=Label(self.master, text="PF6 led high")
+                self.l6=Label(self.master, text="PC10 vbatt sense low")
+                self.l7=Label(self.master, text="PC10 vbatt sense high")
+                self.l8=Label(self.master, text="PA4 bleeding low")
+                self.l9=Label(self.master, text="PA4 bleeding high")
+                self.l10=Label(self.master, text="Reset timing")
+                self.l11=Label(self.master, text="Vcoil")
+                self.l12=Label(self.master, text="Charging Voltage")
+                
+                self.l13=Label(self.master, text="Current new")
+                self.l14=Label(self.master, text="Current programmed")
+                self.l15=Label(self.master, text="Current charging")
                 
                 x=0
                 y=tabley
                 self.l0.grid(row=y, column=x)
                 y+=1                    
                 self.l1.grid(row=y, column=x)
-
+                y+=1
+                self.l2.grid(row=y, column=x)
                 y+=1
                 self.l3.grid(row=y, column=x)
                 y+=1
@@ -117,32 +130,42 @@ class Application(Frame):
                 y+=1
                 self.l10.grid(row=y, column=x)
                 y+=1
-                self.l11.grid(row=y, column=x)
-                y+=1
-                self.l2.grid(row=y, column=x)#Vcoil
+                self.l11.grid(row=y, column=x)                
                 y+=1
                 self.l12.grid(row=y, column=x)
+                y+=1
+                self.l13.grid(row=y, column=x)
+                y+=1
+                self.l14.grid(row=y, column=x)
+                y+=1
+                self.l15.grid(row=y, column=x)
                 
                 #Second column
                 self.ll0=Label(self.master, text="Pass Criteria")
                 self.ll1=Label(self.master, text="3.0-4.2 V")
-                self.ll2=Label(self.master, text="4.9-5.1 V")
-                self.ll3=Label(self.master, text="3.2-3.4 V")
-                self.ll4=Label(self.master, text="1.7-1.9 V")
-                self.ll5=Label(self.master, text="<500 mV")
-                self.ll6=Label(self.master, text=">2.7 V")
-                self.ll7=Label(self.master, text="<500 mV")
-                self.ll8=Label(self.master, text=">2.7 V")
-                self.ll9=Label(self.master, text="<500 mV")
-                self.ll10=Label(self.master, text=">2.7 V")
-                self.ll11=Label(self.master, text=">5 mS")
-                self.ll12=Label(self.master, text="3.0-4.2 V")
+                self.ll2=Label(self.master, text="3.2-3.4 V")
+                self.ll3=Label(self.master, text="1.7-1.9 V")
+                self.ll4=Label(self.master, text="<500 mV")
+                self.ll5=Label(self.master, text=">2.7 V")
+                self.ll6=Label(self.master, text="<500 mV")
+                self.ll7=Label(self.master, text=">2.7 V")
+                self.ll8=Label(self.master, text="<500 mV")
+                self.ll9=Label(self.master, text=">2.7 V")
+                self.ll10=Label(self.master, text=">5 mS")
+                self.ll11=Label(self.master, text="4.9-5.1 V")
+                self.ll12=Label(self.master, text="4.0-4.2 V")
+        
+                self.ll13=Label(self.master, text=" ")#placeholders
+                self.ll14=Label(self.master, text=" ")
+                self.ll15=Label(self.master, text=" ")
                 
                 x=1
                 y=tabley
                 self.ll0.grid(row=y, column=x)
                 y+=1                    
                 self.ll1.grid(row=y, column=x)
+                y+=1
+                self.ll2.grid(row=y, column=x)#Vcoil
                 y+=1
                 self.ll3.grid(row=y, column=x)
                 y+=1
@@ -160,33 +183,44 @@ class Application(Frame):
                 y+=1
                 self.ll10.grid(row=y, column=x)                 
                 y+=1
-                self.ll11.grid(row=y, column=x)
+                self.ll11.grid(row=y, column=x)                
                 y+=1
-                self.ll2.grid(row=y, column=x)#Vcoil
+                self.ll12.grid(row=y, column=x)   
+                             
                 y+=1
-                self.ll12.grid(row=y, column=x)
+                self.ll13.grid(row=y, column=x)
+                y+=1
+                self.ll14.grid(row=y, column=x)
+                y+=1
+                self.ll15.grid(row=y, column=x)
                 
                 
                 #Third column
                 self.lll0=Label(self.master, text="Actual Value")
-                self.lll1=Label(self.master, textvariable=self.vbatt)   
-                self.lll2=Label(self.master, textvariable=self.vcoil)
-                self.lll3=Label(self.master, textvariable=self.vmcu)
-                self.lll4=Label(self.master, textvariable=self.vreg)
-                self.lll5=Label(self.master, textvariable=self.led_low) 
-                self.lll6=Label(self.master, textvariable=self.led_high)
-                self.lll7=Label(self.master, textvariable=self.vbatt_sense_low)         
-                self.lll8=Label(self.master, textvariable=self.vbatt_sense_high)        
-                self.lll9=Label(self.master, textvariable=self.bleeding_low)
-                self.lll10=Label(self.master, textvariable=self.bleeding_high)          
-                self.lll11=Label(self.master, textvariable=self.reset_time)
+                self.lll1=Label(self.master, textvariable=self.vbatt)                   
+                self.lll2=Label(self.master, textvariable=self.vmcu)
+                self.lll3=Label(self.master, textvariable=self.vreg)
+                self.lll4=Label(self.master, textvariable=self.led_low) 
+                self.lll5=Label(self.master, textvariable=self.led_high)
+                self.lll6=Label(self.master, textvariable=self.vbatt_sense_low)         
+                self.lll7=Label(self.master, textvariable=self.vbatt_sense_high)        
+                self.lll8=Label(self.master, textvariable=self.bleeding_low)
+                self.lll9=Label(self.master, textvariable=self.bleeding_high)          
+                self.lll10=Label(self.master, textvariable=self.reset_time)
+                self.lll11=Label(self.master, textvariable=self.vcoil)
                 self.lll12=Label(self.master, textvariable=self.vbatt2)  
+                
+                self.lll13=Label(self.master, textvariable=self.cnew) 
+                self.lll14=Label(self.master, textvariable=self.cprog) 
+                self.lll15=Label(self.master, textvariable=self.ccharge) 
                 
                 x=2
                 y=tabley                                
                 self.lll0.grid(row=y, column=x)
                 y+=1
                 self.lll1.grid(row=y, column=x)
+                y+=1
+                self.lll2.grid(row=y, column=x)
                 y+=1
                 self.lll3.grid(row=y, column=x)
                 y+=1
@@ -204,11 +238,15 @@ class Application(Frame):
                 y+=1
                 self.lll10.grid(row=y, column=x)                        
                 y+=1
-                self.lll11.grid(row=y, column=x)
+                self.lll11.grid(row=y, column=x)                
                 y+=1
-                self.lll2.grid(row=y, column=x)
+                self.lll12.grid(row=y, column=x)                
                 y+=1
-                self.lll12.grid(row=y, column=x)
+                self.lll13.grid(row=y, column=x)
+                y+=1
+                self.lll14.grid(row=y, column=x)
+                y+=1
+                self.lll15.grid(row=y, column=x)
                 
                 
                 #Fourth column
@@ -232,6 +270,8 @@ class Application(Frame):
                 y+=1
                 self.llll1.grid(row=y, column=x)
                 y+=1
+                self.llll2.grid(row=y, column=x)                 
+                y+=1
                 self.llll3.grid(row=y, column=x)
                 y+=1
                 self.llll4.grid(row=y, column=x)
@@ -248,17 +288,17 @@ class Application(Frame):
                 y+=1
                 self.llll10.grid(row=y, column=x)
                 y+=1
-                self.llll11.grid(row=y, column=x)
-                y+=1
-                self.llll2.grid(row=y, column=x)     
+                self.llll11.grid(row=y, column=x)                    
                 y+=1
                 self.llll12.grid(row=y, column=x)                            
                 
                 
-                y+=2            
+                y+=6           
                 self.exit=Button(self.master,  text="Exit",command=self.master.destroy)#.pack(side="top",pady=40)               
                 self.exit.grid(row=y, column=1,pady=10)
-                         
+                
+                
+                       
                                  
 
 
@@ -293,14 +333,17 @@ class Application(Frame):
                 except FileExistsError:
                         pass
                 
+                resetsense=27
+                relaywirelesscharge = 24
+                relaybatt = 23
                 GPIO.setmode(GPIO.BCM)
                 GPIO.setup(27, GPIO.IN) #sense reset                
                 GPIO.setup(24, GPIO.OUT) #relay
                 GPIO.setup(23, GPIO.OUT) #Vin to power tag
                 
-                GPIO.output(24, GPIO.LOW)  
-                GPIO.output(23, GPIO.LOW)
-                
+                GPIO.output(relaywirelesscharge, GPIO.LOW)  
+                GPIO.output(relaybatt          , GPIO.LOW)
+                                
                 serial_number=self.e1.get()
 
                 test_Report=open(str(os.path.dirname(__file__))+"/test reports/"+serial_number+".txt","a")
@@ -325,6 +368,10 @@ class Application(Frame):
                 self.reset_time.set("0 mS")
                 self.vbatt2.set("0 V")
                 
+                self.cnew.set("0 mA")
+                self.cprog.set("0 mA")
+                self.ccharge.set("0 mA")
+                
                 self.llll1.config(bg="white")
                 self.llll2.config(bg="white")
                 self.llll3.config(bg="white")
@@ -337,19 +384,19 @@ class Application(Frame):
                 self.llll10.config(bg="white")
                 self.llll11.config(bg="white")
                 self.llll12.config(bg="white")
-                
-                GPIO.output(23, GPIO.HIGH)
-                GPIO.output(24, GPIO.HIGH)
+                                
+                GPIO.output(relaybatt          , GPIO.HIGH) #battery
+                GPIO.output(relaywirelesscharge, GPIO.HIGH) #wireless charger
                 time.sleep(2)
-                GPIO.output(24, GPIO.LOW)
+                GPIO.output(relaywirelesscharge, GPIO.LOW)
                 self.currentAction.set("Reading Values")
                 self.master.update()
-                time.sleep(1)
+                time.sleep(3)
                                 
                 ADC_values=self.read_ADC()
                 
                         
-                self.currentAction.set("Reading Values")  
+                self.currentAction.set("Reading Vbatt")  
                         
                 
                 
@@ -366,7 +413,14 @@ class Application(Frame):
                         self.llll1.config(bg="red")     
                         test_Report.write("fail\n")
                 self.master.update()
-        
+                
+                self.currentAction.set("Reading Current")  
+                currentread = currentsense.currentRead()
+                print('{:.2f}'.format(currentread.currentReading())+" mA")
+                self.cprog.set('{:.2f}'.format(currentread.currentReading())+" mA")
+                              
+               
+                
                 #Vmcu 
                 ADC_values[2] , testpass =self.read_sampleADC(2 , 3.2 , 3.4)
                 vmcuf='{:.2f}'.format(ADC_values[2])
@@ -374,10 +428,10 @@ class Application(Frame):
                 
                 test_Report.write("Vmcu:\t\t\t"+vmcuf+" V\t")
                 if testpass:
-                        self.llll3.config(bg="green")
+                        self.llll2.config(bg="green")
                         test_Report.write("pass\n")
                 else:
-                        self.llll3.config(bg="red")     
+                        self.llll2.config(bg="red")     
                         test_Report.write("fail\n")
                 self.master.update()
                 
@@ -390,10 +444,10 @@ class Application(Frame):
                 self.master.update()
 
                 if testpass:
-                        self.llll4.config(bg="green")
+                        self.llll3.config(bg="green")
                         test_Report.write("pass\n")
                 else:
-                        self.llll4.config(bg="red")     
+                        self.llll3.config(bg="red")     
                         test_Report.write("fail\n")
                 self.master.update()
         
@@ -417,10 +471,10 @@ class Application(Frame):
                 self.led_low.set(ledlf+" V")
                 
                 if testpass:
-                        self.llll5.config(bg="green")
+                        self.llll4.config(bg="green")
                         test_Report.write("pass\n")
                 else:
-                        self.llll5.config(bg="red")
+                        self.llll4.config(bg="red")
                         test_Report.write("fail\n") 
                 
                 self.master.update()
@@ -438,10 +492,10 @@ class Application(Frame):
                 self.led_high.set(ledhf+" V")
                 
                 if testpass:
-                        self.llll6.config(bg="green")
+                        self.llll5.config(bg="green")
                         test_Report.write("pass\n")
                 else:
-                        self.llll6.config(bg="red")     
+                        self.llll5.config(bg="red")     
                         test_Report.write("fail\n")
                  
                         
@@ -457,10 +511,10 @@ class Application(Frame):
                 self.vbatt_sense_low.set(vbattSenself+" V")                       
                 
                 if testpass:
-                        self.llll7.config(bg="green")
+                        self.llll6.config(bg="green")
                         test_Report.write("pass\n")
                 else:
-                        self.llll7.config(bg="red")                     
+                        self.llll6.config(bg="red")                     
                         test_Report.write("fail\n")
 
                         
@@ -475,10 +529,10 @@ class Application(Frame):
                 self.vbatt_sense_high.set(vbattSensehf+" V")
                 
                 if testpass:
-                        self.llll8.config(bg="green")
+                        self.llll7.config(bg="green")
                         test_Report.write("pass\n")
                 else:
-                        self.llll8.config(bg="red")     
+                        self.llll7.config(bg="red")     
                         test_Report.write("fail\n")
                 
                         
@@ -493,10 +547,10 @@ class Application(Frame):
                 self.bleeding_low.set(bleedlf+" V")
                 
                 if testpass:
-                        self.llll9.config(bg="green")
+                        self.llll8.config(bg="green")
                         test_Report.write("pass\n")
                 else:
-                        self.llll9.config(bg="red")
+                        self.llll8.config(bg="red")
                         test_Report.write("fail\n")
                  
                         
@@ -511,10 +565,10 @@ class Application(Frame):
                 self.bleeding_high.set(bleedhf+" V")
                 
                 if testpass:
-                        self.llll10.config(bg="green")
+                        self.llll9.config(bg="green")
                         test_Report.write("pass\n")
                 else:
-                        self.llll10.config(bg="red")            
+                        self.llll9.config(bg="red")            
                         test_Report.write("fail\n")
 
 		################ Sense Reset Pulse #######################
@@ -554,15 +608,15 @@ class Application(Frame):
                 test_Report.write("Reset pulse:\t\t"+str(self.timetaken)+" mS\t")         
        
                 if self.timetaken>5.0:
-                        self.llll11.config(bg="green")
+                        self.llll10.config(bg="green")
                         test_Report.write("pass\n")
                 else:
-                        self.llll11.config(bg="red")     
+                        self.llll10.config(bg="red")     
                         test_Report.write("fail\n") 
                 
 
-
-                time.sleep(2)
+                #GPIO.output(relaybatt, GPIO.LOW)
+                time.sleep(1)
                 
                 #Vcoil
                 self.currentAction.set("Reading Vcoil")
@@ -575,19 +629,31 @@ class Application(Frame):
 
                 test_Report.write("Vcoil:\t\t\t"+vcoilf+" V\t")             
                 if testpass:
-                        self.llll2.config(bg="green")
+                        self.llll11.config(bg="green")
                         test_Report.write("pass\n")
                 else:
-                        self.llll2.config(bg="red")     
+                        self.llll11.config(bg="red")     
                         test_Report.write("fail\n")
                         
                         
+                time.sleep(2)
+                
+                #read batt current with charger on
+                self.currentAction.set("Reading Current")  
+                currentread = currentsense.currentRead()
+                print('{:.2f}'.format(currentread.currentReading())+" mA")
+                self.ccharge.set('{:.2f}'.format(currentread.currentReading())+" mA")
+                
+                time.sleep(1)
+                #turn off batt
+                GPIO.output(relaybatt , GPIO.LOW)
+                
                         
                 #Vbatt 2
                 self.currentAction.set("Reading V batt")
-                self.master.update()                
-                
-                ADC_values[0],testpass=self.read_sampleADC(0, 3 , 4.2 )
+                self.master.update()               
+                                
+                ADC_values[0],testpass=self.read_sampleADC(0, 4 , 4.2 )
                 vbatt2 ='{:.2f}'.format(ADC_values[0])
                 
                 self.vbatt2.set(vbatt2+" V")                        
@@ -599,18 +665,16 @@ class Application(Frame):
                 else:
                         self.llll12.config(bg="red")     
                         test_Report.write("fail\n")
-                        
-                        
-                        
-
+                
+                    
       
                 self.currentAction.set("Test Complete")
                 
                 test_Report.write("\n\n\n\n")
                 test_Report.close()
                 
-                GPIO.output(24, GPIO.LOW)
-                GPIO.output(23, GPIO.LOW)
+                GPIO.output(relaywirelesscharge, GPIO.LOW)
+                GPIO.output(relaybatt          , GPIO.LOW)
                 GPIO.cleanup()
 
                 
@@ -748,6 +812,8 @@ class Application(Frame):
                 except:
                         GPIO.cleanup()
                         print ("\r\nERROR IN READ  ")                
+           
                 
+
                         
                 

@@ -1,0 +1,28 @@
+Tag Initial Current Reading
+Serial Number:		321
+Time:			Fri Nov  1 17:03:00 2019
+Initial Current:	49.93 mA
+
+
+Tag Test Report
+Serial Number:		321
+Time:			Fri Nov  1 17:03:20 2019
+
+Vbatt:			3.04 V	pass
+Vmcu:			3.36 V	pass
+Vreg:			1.82 V	pass
+PF6 LED Low:		0.03 V	pass
+PF6 LED High:		3.42 V	pass
+PC10 vbatt sense low:	0.03 V	pass
+PC10 vbatt sense high:	3.42 V	pass
+PA4 bleeding low:	0.03 V	pass
+PA4 bleeding high:	3.41 V	pass
+Reset pulse:		7.97 mS	pass
+Vcoil:			4.93 V	pass
+Vcoil:			4.18 V	pass
+Charging Current:	-178.69 mA
+Programmed Current:	52.51 mA
+
+
+
+

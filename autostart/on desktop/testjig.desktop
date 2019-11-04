@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=Test Jig
+Comment=Test Jig
+Exec=/home/pi/testjig.sh
+Icon=
+Terminal=false
+Type=Application

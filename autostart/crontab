@@ -1,0 +1,1 @@
+@reboot sleep 30 && export DISPLAY=:0 && sh ~/keypress.sh

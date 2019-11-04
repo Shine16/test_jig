@@ -1,0 +1,1952 @@
+Tag Test Report
+Serial Number:		
+Time:			Fri Oct  4 16:42:34 2019
+
+Vbatt:			0.64 V	fail
+Vmcu:			2.04 V	fail
+Vreg:			1.75 V	pass
+PF6 LED Low:		0.03 V	pass
+PF6 LED High:		0.05 V	fail
+PC10 vbatt sense low:	0.01 V	pass
+PC10 vbatt sense high:	1.81 V	fail
+PA4 bleeding low:	0.00 V	pass
+PA4 bleeding high:	0.00 V	fail
+Reset pulse:		7.39 mS	Tag Test Report
+Serial Number:		
+Time:			Fri Oct  4 17:46:21 2019
+
+Vbatt:			3.62 V	pass
+Vmcu:			3.40 V	fail
+Vreg:			1.81 V	pass
+PF6 LED Low:		0.00 V	pass
+PF6 LED High:		3.40 V	pass
+PC10 vbatt sense low:	0.00 V	pass
+PC10 vbatt sense high:	3.40 V	pass
+PA4 bleeding low:	0.00 V	pass
+PA4 bleeding high:	3.40 V	pass
+Reset pulse:		7.92 mS	pass
+Vcoil:			3.40 V	fail
+Vcoil:			3.40 V	pass
+
+
+
+
+Tag Test Report
+Serial Number:		
+Time:			Fri Oct  4 17:58:51 2019
+
+Vbatt:			3.62 V	pass
+Vmcu:			3.38 V	pass
+Vreg:			1.80 V	pass
+PF6 LED Low:		0.00 V	pass
+PF6 LED High:		3.41 V	pass
+PC10 vbatt sense low:	0.00 V	pass
+PC10 vbatt sense high:	3.41 V	pass
+PA4 bleeding low:	0.00 V	pass
+PA4 bleeding high:	3.40 V	pass
+Reset pulse:		0 mS	fail
+Vcoil:			3.41 V	fail
+Vcoil:			3.41 V	pass
+
+
+
+
+Tag Test Report
+Serial Number:		
+Time:			Fri Oct  4 17:59:24 2019
+
+Vbatt:			3.65 V	pass
+Vmcu:			3.38 V	pass
+Vreg:			1.80 V	pass
+PF6 LED Low:		0.00 V	pass
+PF6 LED High:		3.41 V	pass
+PC10 vbatt sense low:	0.00 V	pass
+PC10 vbatt sense high:	3.41 V	pass
+PA4 bleeding low:	0.00 V	pass
+PA4 bleeding high:	3.40 V	pass
+Reset pulse:		0 mS	fail
+Vcoil:			3.41 V	fail
+Vcoil:			3.41 V	pass
+
+
+
+
+Tag Test Report
+Serial Number:		
+Time:			Mon Oct  7 11:36:00 2019
+
+Vbatt:			3.82 V	pass
+Vmcu:			3.40 V	pass
+Vreg:			1.81 V	pass
+PF6 LED Low:		0.00 V	pass
+PF6 LED High:		3.40 V	pass
+PC10 vbatt sense low:	0.00 V	pass
+PC10 vbatt sense high:	3.40 V	pass
+PA4 bleeding low:	0.00 V	pass
+PA4 bleeding high:	3.40 V	pass
+Reset pulse:		7.67 mS	pass
+Vcoil:			3.74 V	fail
+Vcoil:			3.74 V	pass
+
+
+
+
+Tag Test Report
+Serial Number:		
+Time:			Mon Oct  7 11:41:08 2019
+
+Vbatt:			3.82 V	pass
+Vmcu:			3.40 V	pass
+Vreg:			1.81 V	pass
+PF6 LED Low:		0.00 V	pass
+PF6 LED High:		3.40 V	pass
+PC10 vbatt sense low:	0.00 V	pass
+PC10 vbatt sense high:	3.40 V	pass
+PA4 bleeding low:	0.00 V	pass
+PA4 bleeding high:	3.40 V	pass
+Reset pulse:		7.66 mS	pass
+Vcoil:			3.74 V	fail
+Vcoil:			3.74 V	pass
+
+
+
+
+Tag Test Report
+Serial Number:		
+Time:			Mon Oct  7 11:51:15 2019
+
+Vbatt:			3.84 V	pass
+Vmcu:			3.39 V	pass
+Vreg:			1.80 V	pass
+PF6 LED Low:		0.00 V	pass
+PF6 LED High:		3.40 V	pass
+PC10 vbatt sense low:	0.00 V	pass
+PC10 vbatt sense high:	3.40 V	pass
+PA4 bleeding low:	0.00 V	pass
+PA4 bleeding high:	3.40 V	pass
+Reset pulse:		7.5 mS	pass
+Vcoil:			3.74 V	fail
+Tag Test Report
+Serial Number:		
+Time:			Mon Oct  7 17:31:58 2019
+
+Vbatt:			5.00 V	fail
+Vmcu:			3.39 V	pass
+Vreg:			1.84 V	pass
+PF6 LED Low:		0.02 V	pass
+PF6 LED High:		3.44 V	pass
+PC10 vbatt sense low:	0.01 V	pass
+PC10 vbatt sense high:	3.44 V	pass
+PA4 bleeding low:	0.02 V	pass
+PA4 bleeding high:	3.43 V	pass
+Reset pulse:		7.3 mS	pass
+Vcoil:			4.99 V	pass
+Vcoil:			4.16 V	pass
+
+
+
+
+Tag Test Report
+Serial Number:		
+Time:			Mon Oct  7 17:32:23 2019
+
+Vbatt:			4.13 V	pass
+Vmcu:			3.39 V	pass
+Vreg:			1.80 V	pass
+PF6 LED Low:		0.01 V	pass
+PF6 LED High:		3.39 V	pass
+PC10 vbatt sense low:	0.01 V	pass
+PC10 vbatt sense high:	3.39 V	pass
+PA4 bleeding low:	0.01 V	pass
+PA4 bleeding high:	3.38 V	pass
+Reset pulse:		7.31 mS	pass
+Vcoil:			4.99 V	pass
+Vcoil:			4.15 V	pass
+
+
+
+
+Tag Test Report
+Serial Number:		
+Time:			Mon Oct  7 17:32:50 2019
+
+Vbatt:			4.13 V	pass
+Vmcu:			3.39 V	pass
+Vreg:			1.80 V	pass
+PF6 LED Low:		0.01 V	pass
+PF6 LED High:		3.39 V	pass
+PC10 vbatt sense low:	0.01 V	pass
+PC10 vbatt sense high:	3.39 V	pass
+PA4 bleeding low:	0.01 V	pass
+PA4 bleeding high:	3.38 V	pass
+Reset pulse:		7.32 mS	pass
+Vcoil:			4.99 V	pass
+Vcoil:			4.15 V	pass
+
+
+
+
+Tag Test Report
+Serial Number:		
+Time:			Tue Oct  8 09:50:09 2019
+
+Vbatt:			4.13 V	pass
+Vmcu:			3.38 V	pass
+Vreg:			1.80 V	pass
+PF6 LED Low:		0.01 V	pass
+PF6 LED High:		3.38 V	pass
+PC10 vbatt sense low:	0.01 V	pass
+PC10 vbatt sense high:	3.38 V	pass
+PA4 bleeding low:	0.01 V	pass
+PA4 bleeding high:	3.38 V	pass
+Reset pulse:		7.11 mS	pass
+Vcoil:			4.99 V	pass
+Vcoil:			4.04 V	pass
+
+
+
+
+Tag Test Report
+Serial Number:		
+Time:			Tue Oct  8 09:50:34 2019
+
+Vbatt:			4.13 V	pass
+Vmcu:			3.38 V	pass
+Vreg:			1.80 V	pass
+PF6 LED Low:		0.70 V	fail
+PF6 LED High:		0.01 V	fail
+PC10 vbatt sense low:	0.01 V	pass
+PC10 vbatt sense high:	3.38 V	pass
+PA4 bleeding low:	0.01 V	pass
+PA4 bleeding high:	3.38 V	pass
+Reset pulse:		7.17 mS	pass
+Vcoil:			4.99 V	pass
+Vcoil:			3.97 V	pass
+
+
+
+
+Tag Test Report
+Serial Number:		
+Time:			Tue Oct  8 09:52:16 2019
+
+Vbatt:			0.79 V	fail
+Vmcu:			2.07 V	fail
+Vreg:			1.80 V	pass
+PF6 LED Low:		0.59 V	fail
+PF6 LED High:		0.79 V	fail
+PC10 vbatt sense low:	0.26 V	pass
+PC10 vbatt sense high:	0.12 V	fail
+PA4 bleeding low:	0.08 V	pass
+PA4 bleeding high:	0.10 V	fail
+Reset pulse:		0.01 mS	fail
+Vcoil:			4.99 V	pass
+Vcoil:			3.45 V	pass
+
+
+
+
+Tag Test Report
+Serial Number:		
+Time:			Tue Oct  8 09:53:04 2019
+
+Vbatt:			4.13 V	pass
+Vmcu:			3.38 V	pass
+Vreg:			1.80 V	pass
+PF6 LED Low:		0.01 V	pass
+PF6 LED High:		3.38 V	pass
+PC10 vbatt sense low:	0.01 V	pass
+PC10 vbatt sense high:	3.38 V	pass
+PA4 bleeding low:	0.01 V	pass
+PA4 bleeding high:	3.38 V	pass
+Reset pulse:		7.14 mS	pass
+Vcoil:			4.99 V	pass
+Vcoil:			3.98 V	pass
+
+
+
+
+Tag Test Report
+Serial Number:		
+Time:			Tue Oct  8 09:55:44 2019
+
+Vbatt:			4.16 V	pass
+Vmcu:			3.37 V	pass
+Vreg:			1.80 V	pass
+PF6 LED Low:		0.01 V	pass
+PF6 LED High:		3.39 V	pass
+PC10 vbatt sense low:	0.01 V	pass
+PC10 vbatt sense high:	3.39 V	pass
+PA4 bleeding low:	0.01 V	pass
+PA4 bleeding high:	3.38 V	pass
+Reset pulse:		7.25 mS	pass
+Vcoil:			4.99 V	pass
+Vcoil:			4.20 V	pass
+
+
+
+
+Tag Test Report
+Serial Number:		
+Time:			Tue Oct  8 09:56:09 2019
+
+Vbatt:			4.13 V	pass
+Vmcu:			3.39 V	pass
+Vreg:			1.80 V	pass
+PF6 LED Low:		0.01 V	pass
+PF6 LED High:		3.39 V	pass
+PC10 vbatt sense low:	0.01 V	pass
+PC10 vbatt sense high:	3.39 V	pass
+PA4 bleeding low:	0.01 V	pass
+PA4 bleeding high:	3.38 V	pass
+Reset pulse:		7.23 mS	pass
+Vcoil:			4.99 V	pass
+Vcoil:			4.20 V	pass
+
+
+
+
+Tag Test Report
+Serial Number:		
+Time:			Tue Oct  8 09:56:32 2019
+
+Vbatt:			4.13 V	pass
+Vmcu:			3.39 V	pass
+Vreg:			1.80 V	pass
+PF6 LED Low:		0.01 V	pass
+PF6 LED High:		3.39 V	pass
+PC10 vbatt sense low:	0.01 V	pass
+PC10 vbatt sense high:	3.39 V	pass
+PA4 bleeding low:	0.01 V	pass
+PA4 bleeding high:	3.38 V	pass
+Reset pulse:		7.22 mS	pass
+Vcoil:			4.99 V	pass
+Vcoil:			4.20 V	pass
+
+
+
+
+Tag Test Report
+Serial Number:		
+Time:			Tue Oct  8 09:56:56 2019
+
+Vbatt:			4.13 V	pass
+Vmcu:			3.39 V	pass
+Vreg:			1.80 V	pass
+PF6 LED Low:		0.01 V	pass
+PF6 LED High:		3.39 V	pass
+PC10 vbatt sense low:	0.01 V	pass
+PC10 vbatt sense high:	3.39 V	pass
+PA4 bleeding low:	0.01 V	pass
+PA4 bleeding high:	3.38 V	pass
+Reset pulse:		7.23 mS	pass
+Vcoil:			4.99 V	pass
+Vcoil:			3.93 V	pass
+
+
+
+
+Tag Test Report
+Serial Number:		
+Time:			Tue Oct  8 09:57:20 2019
+
+Vbatt:			4.13 V	pass
+Vmcu:			3.39 V	pass
+Vreg:			1.80 V	pass
+PF6 LED Low:		0.01 V	pass
+PF6 LED High:		3.39 V	pass
+PC10 vbatt sense low:	0.01 V	pass
+PC10 vbatt sense high:	3.39 V	pass
+PA4 bleeding low:	0.01 V	pass
+PA4 bleeding high:	3.38 V	pass
+Reset pulse:		7.22 mS	pass
+Vcoil:			4.99 V	pass
+Vcoil:			3.87 V	pass
+
+
+
+
+Tag Test Report
+Serial Number:		
+Time:			Tue Oct  8 09:57:52 2019
+
+Vbatt:			4.13 V	pass
+Vmcu:			3.39 V	pass
+Vreg:			1.80 V	pass
+PF6 LED Low:		0.01 V	pass
+PF6 LED High:		3.39 V	pass
+PC10 vbatt sense low:	0.01 V	pass
+PC10 vbatt sense high:	3.39 V	pass
+PA4 bleeding low:	0.01 V	pass
+PA4 bleeding high:	3.38 V	pass
+Reset pulse:		7.2 mS	pass
+Vcoil:			4.99 V	pass
+Vcoil:			4.20 V	pass
+
+
+
+
+Tag Test Report
+Serial Number:		
+Time:			Tue Oct  8 09:58:18 2019
+
+Vbatt:			4.13 V	pass
+Vmcu:			3.39 V	pass
+Vreg:			1.80 V	pass
+PF6 LED Low:		0.01 V	pass
+PF6 LED High:		3.39 V	pass
+PC10 vbatt sense low:	0.01 V	pass
+PC10 vbatt sense high:	3.39 V	pass
+PA4 bleeding low:	0.01 V	pass
+PA4 bleeding high:	3.38 V	pass
+Reset pulse:		7.23 mS	pass
+Vcoil:			4.99 V	pass
+Vcoil:			4.20 V	pass
+
+
+
+
+Tag Test Report
+Serial Number:		
+Time:			Tue Oct  8 09:59:10 2019
+
+Vbatt:			4.13 V	pass
+Vmcu:			3.39 V	pass
+Vreg:			1.80 V	pass
+PF6 LED Low:		0.01 V	pass
+PF6 LED High:		0.93 V	fail
+PC10 vbatt sense low:	0.76 V	fail
+PC10 vbatt sense high:	0.45 V	fail
+PA4 bleeding low:	0.09 V	pass
+PA4 bleeding high:	0.10 V	fail
+Reset pulse:		0.01 mS	fail
+Vcoil:			4.99 V	pass
+Vcoil:			4.21 V	fail
+
+
+
+
+Tag Test Report
+Serial Number:		
+Time:			Tue Oct  8 09:59:45 2019
+
+Vbatt:			4.13 V	pass
+Vmcu:			3.39 V	pass
+Vreg:			1.80 V	pass
+PF6 LED Low:		0.01 V	pass
+PF6 LED High:		3.39 V	pass
+PC10 vbatt sense low:	0.01 V	pass
+PC10 vbatt sense high:	3.39 V	pass
+PA4 bleeding low:	0.01 V	pass
+PA4 bleeding high:	3.38 V	pass
+Reset pulse:		7.19 mS	pass
+Vcoil:			4.99 V	pass
+Vcoil:			4.20 V	pass
+
+
+
+
+Tag Test Report
+Serial Number:		
+Time:			Tue Oct  8 10:00:10 2019
+
+Vbatt:			4.13 V	pass
+Vmcu:			3.39 V	pass
+Vreg:			1.80 V	pass
+PF6 LED Low:		0.01 V	pass
+PF6 LED High:		3.39 V	pass
+PC10 vbatt sense low:	0.01 V	pass
+PC10 vbatt sense high:	3.39 V	pass
+PA4 bleeding low:	0.01 V	pass
+PA4 bleeding high:	3.38 V	pass
+Reset pulse:		7.21 mS	pass
+Vcoil:			4.99 V	pass
+Vcoil:			4.20 V	pass
+
+
+
+
+Tag Test Report
+Serial Number:		
+Time:			Wed Oct  9 11:54:20 2019
+
+Vbatt:			0.65 V	fail
+Vmcu:			1.05 V	fail
+Vreg:			1.11 V	fail
+PF6 LED Low:		1.19 V	fail
+PF6 LED High:		1.19 V	fail
+PC10 vbatt sense low:	1.17 V	fail
+PC10 vbatt sense high:	1.16 V	fail
+PA4 bleeding low:	0.62 V	fail
+PA4 bleeding high:	0.62 V	fail
+Reset pulse:		0 mS	fail
+Vcoil:			1.19 V	fail
+Vcoil:			1.12 V	fail
+
+
+
+
+Tag Test Report
+Serial Number:		
+Time:			Wed Oct  9 13:11:33 2019
+
+Vbatt:			2.35 V	fail
+Vmcu:			2.62 V	fail
+Vreg:			2.38 V	fail
+PF6 LED Low:		1.19 V	fail
+PF6 LED High:		1.19 V	fail
+PC10 vbatt sense low:	1.19 V	fail
+PC10 vbatt sense high:	1.19 V	fail
+PA4 bleeding low:	2.35 V	fail
+PA4 bleeding high:	2.34 V	fail
+Reset pulse:		0 mS	fail
+Vcoil:			4.99 V	pass
+Vcoil:			3.87 V	pass
+
+
+
+
+Tag Test Report
+Serial Number:		
+Time:			Wed Oct  9 13:12:19 2019
+
+Vbatt:			2.34 V	fail
+Vmcu:			2.58 V	fail
+Vreg:			2.38 V	fail
+PF6 LED Low:		1.19 V	fail
+PF6 LED High:		1.19 V	fail
+PC10 vbatt sense low:	1.19 V	fail
+PC10 vbatt sense high:	1.19 V	fail
+PA4 bleeding low:	2.34 V	fail
+PA4 bleeding high:	2.34 V	fail
+Reset pulse:		0 mS	fail
+Vcoil:			4.99 V	pass
+Vcoil:			3.66 V	pass
+
+
+
+
+Tag Test Report
+Serial Number:		
+Time:			Wed Oct  9 13:13:42 2019
+
+Vbatt:			2.34 V	fail
+Vmcu:			2.56 V	fail
+Vreg:			2.37 V	fail
+PF6 LED Low:		1.19 V	fail
+PF6 LED High:		1.19 V	fail
+PC10 vbatt sense low:	1.19 V	fail
+PC10 vbatt sense high:	1.19 V	fail
+PA4 bleeding low:	2.34 V	fail
+PA4 bleeding high:	2.34 V	fail
+Reset pulse:		0 mS	fail
+Vcoil:			4.99 V	pass
+Vcoil:			3.92 V	pass
+
+
+
+
+Tag Test Report
+Serial Number:		
+Time:			Wed Oct  9 13:50:28 2019
+
+Vbatt:			3.60 V	pass
+Vmcu:			3.34 V	fail
+Vreg:			1.77 V	pass
+PF6 LED Low:		2.76 V	fail
+PF6 LED High:		2.96 V	pass
+PC10 vbatt sense low:	1.18 V	fail
+PC10 vbatt sense high:	1.18 V	fail
+PA4 bleeding low:	0.00 V	pass
+PA4 bleeding high:	3.60 V	pass
+Reset pulse:		0 mS	fail
+Vcoil:			4.97 V	pass
+Vcoil:			3.56 V	pass
+
+
+
+
+Tag Test Report
+Serial Number:		
+Time:			Wed Oct  9 14:14:57 2019
+
+Vbatt:			3.38 V	pass
+Vmcu:			3.44 V	fail
+Vreg:			1.80 V	pass
+PF6 LED Low:		1.19 V	fail
+PF6 LED High:		2.63 V	fail
+PC10 vbatt sense low:	1.19 V	fail
+PC10 vbatt sense high:	1.19 V	fail
+PA4 bleeding low:	0.03 V	pass
+PA4 bleeding high:	3.38 V	pass
+Reset pulse:		0 mS	fail
+Vcoil:			4.96 V	pass
+Vcoil:			3.58 V	pass
+
+
+
+
+Tag Test Report
+Serial Number:		
+Time:			Wed Oct  9 14:16:15 2019
+
+Vbatt:			3.36 V	pass
+Vmcu:			3.44 V	fail
+Vreg:			1.80 V	pass
+PF6 LED Low:		1.19 V	fail
+PF6 LED High:		1.19 V	fail
+PC10 vbatt sense low:	1.19 V	fail
+PC10 vbatt sense high:	1.19 V	fail
+PA4 bleeding low:	0.03 V	pass
+PA4 bleeding high:	3.37 V	pass
+Reset pulse:		0 mS	fail
+Vcoil:			4.99 V	pass
+Vcoil:			4.11 V	pass
+
+
+
+
+Tag Test Report
+Serial Number:		
+Time:			Wed Oct  9 14:26:18 2019
+
+Vbatt:			3.38 V	pass
+Vmcu:			3.44 V	fail
+Vreg:			1.81 V	pass
+PF6 LED Low:		1.19 V	fail
+PF6 LED High:		3.16 V	pass
+PC10 vbatt sense low:	0.02 V	pass
+PC10 vbatt sense high:	3.44 V	pass
+PA4 bleeding low:	0.03 V	pass
+PA4 bleeding high:	3.37 V	pass
+Reset pulse:		0 mS	fail
+Vcoil:			4.99 V	pass
+Vcoil:			4.08 V	pass
+
+
+
+
+Tag Test Report
+Serial Number:		
+Time:			Wed Oct  9 14:26:53 2019
+
+Vbatt:			3.37 V	pass
+Vmcu:			3.30 V	pass
+Vreg:			1.81 V	pass
+PF6 LED Low:		2.89 V	fail
+PF6 LED High:		3.06 V	pass
+PC10 vbatt sense low:	0.02 V	pass
+PC10 vbatt sense high:	3.44 V	pass
+PA4 bleeding low:	0.03 V	pass
+PA4 bleeding high:	3.36 V	pass
+Reset pulse:		0 mS	fail
+Vcoil:			4.99 V	pass
+Vcoil:			4.03 V	pass
+
+
+
+
+Tag Test Report
+Serial Number:		
+Time:			Wed Oct  9 14:27:40 2019
+
+Vbatt:			3.36 V	pass
+Vmcu:			3.44 V	fail
+Vreg:			1.81 V	pass
+PF6 LED Low:		1.19 V	fail
+PF6 LED High:		1.19 V	fail
+PC10 vbatt sense low:	1.19 V	fail
+PC10 vbatt sense high:	1.19 V	fail
+PA4 bleeding low:	0.03 V	pass
+PA4 bleeding high:	3.36 V	pass
+Reset pulse:		0 mS	fail
+Vcoil:			4.99 V	pass
+Vcoil:			4.03 V	pass
+
+
+
+
+Tag Test Report
+Serial Number:		
+Time:			Wed Oct  9 14:28:35 2019
+
+Vbatt:			3.35 V	pass
+Vmcu:			3.44 V	fail
+Vreg:			1.81 V	pass
+PF6 LED Low:		1.13 V	fail
+PF6 LED High:		3.03 V	pass
+PC10 vbatt sense low:	1.19 V	fail
+PC10 vbatt sense high:	1.19 V	fail
+PA4 bleeding low:	0.03 V	pass
+PA4 bleeding high:	3.36 V	pass
+Reset pulse:		0 mS	fail
+Vcoil:			4.99 V	pass
+Vcoil:			3.92 V	pass
+
+
+
+
+Tag Test Report
+Serial Number:		
+Time:			Wed Oct  9 14:30:00 2019
+
+Vbatt:			3.35 V	pass
+Vmcu:			3.31 V	pass
+Vreg:			1.81 V	pass
+PF6 LED Low:		3.12 V	fail
+PF6 LED High:		3.14 V	pass
+PC10 vbatt sense low:	1.19 V	fail
+PC10 vbatt sense high:	1.19 V	fail
+PA4 bleeding low:	0.03 V	pass
+PA4 bleeding high:	3.37 V	pass
+Reset pulse:		0 mS	fail
+Vcoil:			4.99 V	pass
+Vcoil:			3.88 V	pass
+
+
+
+
+Tag Test Report
+Serial Number:		
+Time:			Wed Oct  9 14:31:59 2019
+
+Vbatt:			3.35 V	pass
+Vmcu:			3.44 V	fail
+Vreg:			1.81 V	pass
+PF6 LED Low:		1.16 V	fail
+PF6 LED High:		3.09 V	pass
+PC10 vbatt sense low:	1.19 V	fail
+PC10 vbatt sense high:	1.19 V	fail
+PA4 bleeding low:	0.03 V	pass
+PA4 bleeding high:	3.35 V	pass
+Reset pulse:		0 mS	fail
+Vcoil:			4.99 V	pass
+Vcoil:			4.03 V	pass
+
+
+
+
+Tag Test Report
+Serial Number:		
+Time:			Wed Oct  9 14:52:27 2019
+
+Vbatt:			3.43 V	pass
+Vmcu:			1.74 V	fail
+Vreg:			1.71 V	pass
+PF6 LED Low:		0.04 V	pass
+PF6 LED High:		0.04 V	fail
+PC10 vbatt sense low:	1.19 V	fail
+PC10 vbatt sense high:	1.19 V	fail
+PA4 bleeding low:	3.43 V	fail
+PA4 bleeding high:	3.43 V	pass
+Reset pulse:		0 mS	fail
+Vcoil:			1.15 V	fail
+Vcoil:			1.20 V	fail
+
+
+
+
+Tag Test Report
+Serial Number:		
+Time:			Wed Oct  9 14:55:11 2019
+
+Vbatt:			3.28 V	pass
+Vmcu:			3.44 V	fail
+Vreg:			1.81 V	pass
+PF6 LED Low:		0.04 V	pass
+PF6 LED High:		3.08 V	pass
+PC10 vbatt sense low:	1.19 V	fail
+PC10 vbatt sense high:	1.19 V	fail
+PA4 bleeding low:	0.03 V	pass
+PA4 bleeding high:	3.32 V	pass
+Reset pulse:		0 mS	fail
+Vcoil:			1.06 V	fail
+Vcoil:			0.86 V	fail
+
+
+
+
+Tag Test Report
+Serial Number:		
+Time:			Wed Oct  9 14:55:57 2019
+
+Vbatt:			3.27 V	pass
+Vmcu:			3.32 V	pass
+Vreg:			1.81 V	pass
+PF6 LED Low:		0.04 V	pass
+PF6 LED High:		3.00 V	pass
+PC10 vbatt sense low:	1.19 V	fail
+PC10 vbatt sense high:	1.19 V	fail
+PA4 bleeding low:	0.03 V	pass
+PA4 bleeding high:	3.30 V	pass
+Reset pulse:		0 mS	fail
+Vcoil:			1.19 V	fail
+Vcoil:			4.19 V	pass
+
+
+
+
+Tag Test Report
+Serial Number:		
+Time:			Wed Oct  9 14:56:35 2019
+
+Vbatt:			3.29 V	pass
+Vmcu:			3.44 V	fail
+Vreg:			1.81 V	pass
+PF6 LED Low:		0.04 V	pass
+PF6 LED High:		2.93 V	pass
+PC10 vbatt sense low:	0.02 V	pass
+PC10 vbatt sense high:	3.44 V	pass
+PA4 bleeding low:	0.03 V	pass
+PA4 bleeding high:	3.29 V	pass
+Reset pulse:		0 mS	fail
+Vcoil:			4.99 V	pass
+Vcoil:			4.01 V	pass
+
+
+
+
+Tag Test Report
+Serial Number:		
+Time:			Wed Oct  9 14:58:03 2019
+
+Vbatt:			3.08 V	pass
+Vmcu:			3.43 V	fail
+Vreg:			1.81 V	pass
+PF6 LED Low:		0.04 V	pass
+PF6 LED High:		0.05 V	fail
+PC10 vbatt sense low:	0.02 V	pass
+PC10 vbatt sense high:	3.43 V	pass
+PA4 bleeding low:	0.03 V	pass
+PA4 bleeding high:	3.16 V	pass
+Reset pulse:		0 mS	fail
+Vcoil:			4.99 V	pass
+Vcoil:			4.04 V	pass
+
+
+
+
+Tag Test Report
+Serial Number:		
+Time:			Wed Oct  9 17:14:53 2019
+
+Vbatt:			1.19 V	fail
+Vmcu:			3.33 V	pass
+Vreg:			1.81 V	pass
+PF6 LED Low:		0.04 V	pass
+PF6 LED High:		3.02 V	pass
+PC10 vbatt sense low:	1.19 V	fail
+PC10 vbatt sense high:	1.19 V	fail
+PA4 bleeding low:	0.03 V	pass
+PA4 bleeding high:	3.31 V	pass
+Reset pulse:		0 mS	fail
+Vcoil:			4.99 V	pass
+Vcoil:			1.19 V	fail
+
+
+
+
+Tag Test Report
+Serial Number:		
+Time:			Wed Oct  9 17:17:11 2019
+
+Vbatt:			1.19 V	fail
+Vmcu:			2.50 V	fail
+Vreg:			1.19 V	fail
+PF6 LED Low:		0.04 V	pass
+PF6 LED High:		0.05 V	fail
+PC10 vbatt sense low:	1.19 V	fail
+PC10 vbatt sense high:	1.19 V	fail
+PA4 bleeding low:	2.61 V	fail
+PA4 bleeding high:	2.61 V	fail
+Reset pulse:		0 mS	fail
+Vcoil:			1.19 V	fail
+Vcoil:			1.19 V	fail
+
+
+
+
+Tag Test Report
+Serial Number:		
+Time:			Wed Oct  9 17:17:58 2019
+
+Vbatt:			1.19 V	fail
+Vmcu:			1.19 V	fail
+Vreg:			1.19 V	fail
+PF6 LED Low:		0.04 V	pass
+PF6 LED High:		0.05 V	fail
+PC10 vbatt sense low:	1.19 V	fail
+PC10 vbatt sense high:	1.19 V	fail
+PA4 bleeding low:	1.19 V	fail
+PA4 bleeding high:	1.19 V	fail
+Reset pulse:		0 mS	fail
+Vcoil:			4.99 V	fail
+Vcoil:			1.20 V	fail
+
+
+
+
+Tag Test Report
+Serial Number:		
+Time:			Wed Oct  9 17:18:48 2019
+
+Vbatt:			1.19 V	fail
+Vmcu:			3.44 V	fail
+Vreg:			1.81 V	pass
+PF6 LED Low:		0.04 V	pass
+PF6 LED High:		3.15 V	pass
+PC10 vbatt sense low:	1.19 V	fail
+PC10 vbatt sense high:	1.19 V	fail
+PA4 bleeding low:	0.03 V	pass
+PA4 bleeding high:	3.31 V	pass
+Reset pulse:		0 mS	fail
+Vcoil:			4.99 V	pass
+Vcoil:			1.19 V	fail
+
+
+
+
+Tag Test Report
+Serial Number:		
+Time:			Wed Oct  9 17:19:28 2019
+
+Vbatt:			1.20 V	fail
+Vmcu:			3.44 V	fail
+Vreg:			1.81 V	pass
+PF6 LED Low:		0.05 V	pass
+PF6 LED High:		3.11 V	pass
+PC10 vbatt sense low:	1.19 V	fail
+PC10 vbatt sense high:	1.19 V	fail
+PA4 bleeding low:	0.03 V	pass
+PA4 bleeding high:	3.30 V	pass
+Reset pulse:		0 mS	fail
+Vcoil:			4.99 V	pass
+Vcoil:			1.19 V	fail
+
+
+
+
+Tag Test Report
+Serial Number:		
+Time:			Wed Oct  9 17:20:51 2019
+
+Vbatt:			1.19 V	fail
+Vmcu:			3.44 V	fail
+Vreg:			1.81 V	pass
+PF6 LED Low:		0.04 V	pass
+PF6 LED High:		3.06 V	pass
+PC10 vbatt sense low:	1.19 V	fail
+PC10 vbatt sense high:	1.19 V	fail
+PA4 bleeding low:	0.03 V	pass
+PA4 bleeding high:	3.31 V	pass
+Reset pulse:		0 mS	fail
+Vcoil:			4.99 V	pass
+Vcoil:			1.19 V	fail
+
+
+
+
+Tag Test Report
+Serial Number:		
+Time:			Wed Oct  9 17:36:39 2019
+
+Vbatt:			1.19 V	fail
+Vmcu:			1.19 V	fail
+Vreg:			1.19 V	fail
+PF6 LED Low:		0.04 V	pass
+PF6 LED High:		0.04 V	fail
+PC10 vbatt sense low:	1.19 V	fail
+PC10 vbatt sense high:	1.19 V	fail
+PA4 bleeding low:	1.19 V	fail
+PA4 bleeding high:	1.19 V	fail
+Reset pulse:		0 mS	fail
+Vcoil:			1.19 V	fail
+Vcoil:			1.19 V	fail
+
+
+
+
+Tag Test Report
+Serial Number:		
+Time:			Wed Oct  9 17:37:38 2019
+
+Vbatt:			1.19 V	fail
+Vmcu:			3.44 V	fail
+Vreg:			1.81 V	pass
+PF6 LED Low:		0.04 V	pass
+PF6 LED High:		0.04 V	fail
+PC10 vbatt sense low:	1.19 V	fail
+PC10 vbatt sense high:	1.19 V	fail
+PA4 bleeding low:	1.19 V	fail
+PA4 bleeding high:	1.19 V	fail
+Reset pulse:		0 mS	fail
+Vcoil:			1.19 V	fail
+Vcoil:			1.19 V	fail
+
+
+
+
+Tag Test Report
+Serial Number:		
+Time:			Thu Oct 10 15:38:59 2019
+
+Vbatt:			1.19 V	fail
+Vmcu:			1.19 V	fail
+Vreg:			1.19 V	fail
+PF6 LED Low:		1.19 V	fail
+PF6 LED High:		1.19 V	fail
+PC10 vbatt sense low:	1.19 V	fail
+PC10 vbatt sense high:	1.19 V	fail
+PA4 bleeding low:	1.19 V	fail
+PA4 bleeding high:	1.19 V	fail
+Reset pulse:		0 mS	fail
+Vcoil:			1.18 V	fail
+Vcoil:			1.18 V	fail
+
+
+
+
+Tag Test Report
+Serial Number:		
+Time:			Thu Oct 10 15:35:13 2019
+
+Tag Test Report
+Serial Number:		
+Time:			Thu Oct 10 15:44:10 2019
+
+Tag Test Report
+Serial Number:		
+Time:			Thu Oct 10 15:45:23 2019
+
+Vbatt:			1.19 V	fail
+Vmcu:			1.19 V	fail
+Vreg:			1.19 V	Tag Test Report
+Serial Number:		
+Time:			Thu Oct 10 15:45:46 2019
+
+Vbatt:			1.19 V	fail
+Vmcu:			1.19 V	fail
+Vreg:			1.19 V	fail
+PF6 LED Low:		1.19 V	fail
+PF6 LED High:		1.19 V	fail
+PC10 vbatt sense low:	1.19 V	fail
+PC10 vbatt sense high:	1.19 V	fail
+PA4 bleeding low:	1.19 V	fail
+PA4 bleeding high:	1.19 V	fail
+Reset pulse:		0 mS	fail
+Vcoil:			1.18 V	fail
+Vcoil:			1.18 V	fail
+
+
+
+
+Tag Test Report
+Serial Number:		
+Time:			Thu Oct 10 15:47:38 2019
+
+Vbatt:			3.29 V	pass
+Vmcu:			1.19 V	fail
+Vreg:			1.19 V	fail
+PF6 LED Low:		1.19 V	fail
+PF6 LED High:		1.19 V	fail
+PC10 vbatt sense low:	1.19 V	fail
+PC10 vbatt sense high:	1.19 V	fail
+PA4 bleeding low:	1.19 V	fail
+PA4 bleeding high:	1.19 V	fail
+Reset pulse:		0 mS	fail
+Vcoil:			1.18 V	fail
+Vcoil:			1.19 V	fail
+
+
+
+
+Tag Test Report
+Serial Number:		
+Time:			Thu Oct 10 15:53:56 2019
+
+Vbatt:			2.62 V	fail
+Vmcu:			2.67 V	fail
+Vreg:			1.19 V	fail
+PF6 LED Low:		1.19 V	fail
+PF6 LED High:		1.19 V	fail
+PC10 vbatt sense low:	1.19 V	fail
+PC10 vbatt sense high:	1.19 V	fail
+PA4 bleeding low:	1.19 V	fail
+PA4 bleeding high:	1.19 V	fail
+Reset pulse:		0 mS	fail
+Vcoil:			1.20 V	fail
+Vcoil:			1.20 V	fail
+
+
+
+
+Tag Test Report
+Serial Number:		
+Time:			Thu Oct 10 15:58:10 2019
+
+Vbatt:			1.19 V	fail
+Vmcu:			1.19 V	fail
+Vreg:			1.19 V	fail
+PF6 LED Low:		1.19 V	fail
+PF6 LED High:		1.19 V	fail
+PC10 vbatt sense low:	1.19 V	fail
+PC10 vbatt sense high:	1.19 V	fail
+PA4 bleeding low:	1.19 V	Tag Test Report
+Serial Number:		
+Time:			Thu Oct 10 15:58:43 2019
+
+Vbatt:			1.19 V	fail
+Vmcu:			1.19 V	fail
+Vreg:			1.19 V	fail
+PF6 LED Low:		1.19 V	fail
+PF6 LED High:		1.19 V	fail
+PC10 vbatt sense low:	1.19 V	fail
+PC10 vbatt sense high:	1.19 V	fail
+PA4 bleeding low:	1.19 V	fail
+PA4 bleeding high:	1.19 V	fail
+Reset pulse:		0 mS	fail
+Vcoil:			1.19 V	fail
+Vcoil:			1.19 V	fail
+
+
+
+
+Tag Test Report
+Serial Number:		
+Time:			Thu Oct 10 15:59:37 2019
+
+Vbatt:			1.19 V	fail
+Vmcu:			1.19 V	fail
+Vreg:			1.19 V	fail
+PF6 LED Low:		1.19 V	fail
+PF6 LED High:		1.19 V	fail
+PC10 vbatt sense low:	1.19 V	fail
+PC10 vbatt sense high:	1.19 V	fail
+PA4 bleeding low:	1.19 V	fail
+PA4 bleeding high:	1.19 V	fail
+Reset pulse:		0 mS	fail
+Vcoil:			1.19 V	fail
+Vcoil:			1.19 V	fail
+
+
+
+
+Tag Test Report
+Serial Number:		
+Time:			Thu Oct 10 16:02:09 2019
+
+Vbatt:			1.19 V	fail
+Vmcu:			3.46 V	fail
+Vreg:			1.19 V	fail
+PF6 LED Low:		1.19 V	fail
+PF6 LED High:		1.19 V	fail
+PC10 vbatt sense low:	1.19 V	fail
+PC10 vbatt sense high:	1.19 V	fail
+PA4 bleeding low:	1.19 V	fail
+PA4 bleeding high:	1.19 V	fail
+Reset pulse:		0 mS	fail
+Vcoil:			4.99 V	pass
+Vcoil:			1.19 V	fail
+
+
+
+
+Tag Test Report
+Serial Number:		
+Time:			Thu Oct 10 16:03:01 2019
+
+Vbatt:			1.19 V	fail
+Vmcu:			3.46 V	fail
+Vreg:			1.19 V	fail
+PF6 LED Low:		1.19 V	fail
+PF6 LED High:		1.19 V	fail
+PC10 vbatt sense low:	0.03 V	pass
+PC10 vbatt sense high:	1.19 V	fail
+PA4 bleeding low:	1.19 V	fail
+PA4 bleeding high:	1.19 V	fail
+Reset pulse:		0 mS	fail
+Vcoil:			1.19 V	fail
+Vcoil:			1.19 V	fail
+
+
+
+
+Tag Test Report
+Serial Number:		
+Time:			Thu Oct 10 16:05:47 2019
+
+Vbatt:			1.18 V	fail
+Vmcu:			1.19 V	fail
+Vreg:			1.19 V	fail
+PF6 LED Low:		1.19 V	fail
+PF6 LED High:		1.19 V	fail
+PC10 vbatt sense low:	0.03 V	pass
+PC10 vbatt sense high:	3.46 V	pass
+PA4 bleeding low:	1.19 V	fail
+PA4 bleeding high:	1.19 V	fail
+Reset pulse:		0 mS	fail
+Vcoil:			1.19 V	fail
+Vcoil:			1.19 V	fail
+
+
+
+
+Tag Test Report
+Serial Number:		
+Time:			Thu Oct 10 17:22:59 2019
+
+Vbatt:			3.33 V	pass
+Vmcu:			1.19 V	fail
+Vreg:			1.19 V	fail
+PF6 LED Low:		1.19 V	fail
+PF6 LED High:		1.19 V	fail
+PC10 vbatt sense low:	1.19 V	fail
+PC10 vbatt sense high:	1.19 V	fail
+PA4 bleeding low:	1.19 V	fail
+PA4 bleeding high:	1.19 V	fail
+Reset pulse:		0 mS	fail
+Vcoil:			4.99 V	pass
+Vcoil:			3.88 V	pass
+
+
+
+
+Tag Test Report
+Serial Number:		
+Time:			Thu Oct 10 17:24:27 2019
+
+Vbatt:			3.33 V	pass
+Vmcu:			3.46 V	fail
+Vreg:			1.82 V	pass
+PF6 LED Low:		1.19 V	fail
+PF6 LED High:		1.19 V	fail
+PC10 vbatt sense low:	1.19 V	fail
+PC10 vbatt sense high:	1.19 V	fail
+PA4 bleeding low:	1.19 V	fail
+PA4 bleeding high:	0.00 V	fail
+Reset pulse:		1713.58 mS	pass
+Vcoil:			0.00 V	fail
+Tag Test Report
+Serial Number:		
+Time:			Thu Oct 10 17:26:17 2019
+
+Vbatt:			3.29 V	pass
+Vmcu:			3.31 V	pass
+Vreg:			1.83 V	pass
+PF6 LED Low:		1.19 V	fail
+PF6 LED High:		1.19 V	fail
+PC10 vbatt sense low:	1.19 V	fail
+PC10 vbatt sense high:	1.19 V	fail
+PA4 bleeding low:	1.19 V	fail
+PA4 bleeding high:	1.19 V	fail
+Reset pulse:		0 mS	fail
+Vcoil:			4.99 V	pass
+Vcoil:			3.88 V	pass
+
+
+
+
+Tag Test Report
+Serial Number:		
+Time:			Thu Oct 10 17:26:19 2019
+
+Tag Test Report
+Serial Number:		
+Time:			Thu Oct 10 17:28:08 2019
+
+Vbatt:			3.32 V	pass
+Vmcu:			3.46 V	fail
+Vreg:			1.82 V	pass
+PF6 LED Low:		1.19 V	fail
+PF6 LED High:		1.19 V	fail
+PC10 vbatt sense low:	1.19 V	fail
+PC10 vbatt sense high:	1.19 V	fail
+PA4 bleeding low:	1.19 V	fail
+PA4 bleeding high:	1.19 V	fail
+Reset pulse:		0 mS	fail
+Vcoil:			4.99 V	pass
+Vcoil:			4.12 V	pass
+
+
+
+
+Tag Test Report
+Serial Number:		
+Time:			Thu Oct 10 17:26:15 2019
+
+Vbatt:			0.85 V	fail
+Vmcu:			1.20 V	fail
+Vreg:			1.20 V	fail
+PF6 LED Low:		1.20 V	fail
+PF6 LED High:		1.20 V	fail
+PC10 vbatt sense low:	1.20 V	fail
+PC10 vbatt sense high:	1.20 V	fail
+PA4 bleeding low:	1.20 V	fail
+PA4 bleeding high:	1.20 V	fail
+Reset pulse:		0 mS	fail
+Tag Test Report
+Serial Number:		
+Time:			Thu Oct 10 17:30:18 2019
+
+Vbatt:			3.30 V	pass
+Vmcu:			3.46 V	fail
+Vreg:			1.82 V	pass
+PF6 LED Low:		1.19 V	fail
+PF6 LED High:		1.19 V	fail
+PC10 vbatt sense low:	1.19 V	fail
+PC10 vbatt sense high:	1.19 V	fail
+PA4 bleeding low:	1.19 V	fail
+PA4 bleeding high:	1.19 V	fail
+Reset pulse:		0 mS	fail
+Vcoil:			4.99 V	pass
+Vcoil:			4.12 V	pass
+
+
+
+
+Tag Test Report
+Serial Number:		
+Time:			Thu Oct 10 17:34:18 2019
+
+Vbatt:			3.32 V	pass
+Vmcu:			3.56 V	fail
+Vreg:			1.88 V	pass
+PF6 LED Low:		1.19 V	fail
+PF6 LED High:		1.19 V	fail
+PC10 vbatt sense low:	1.19 V	fail
+PC10 vbatt sense high:	1.19 V	fail
+PA4 bleeding low:	1.19 V	fail
+PA4 bleeding high:	1.19 V	fail
+Reset pulse:		0 mS	fail
+Vcoil:			4.99 V	pass
+Vcoil:			3.90 V	pass
+
+
+
+
+Tag Test Report
+Serial Number:		
+Time:			Thu Oct 10 17:29:15 2019
+
+Tag Test Report
+Serial Number:		
+Time:			Thu Oct 10 17:35:38 2019
+
+Vbatt:			1.17 V	fail
+Vmcu:			3.41 V	fail
+Vreg:			1.83 V	pass
+PF6 LED Low:		1.19 V	fail
+PF6 LED High:		1.19 V	fail
+Tag Test Report
+Serial Number:		
+Time:			Thu Oct 10 17:36:04 2019
+
+Vbatt:			3.30 V	pass
+Vmcu:			3.47 V	fail
+Vreg:			1.83 V	pass
+PF6 LED Low:		1.19 V	fail
+PF6 LED High:		1.19 V	fail
+PC10 vbatt sense low:	1.19 V	fail
+PC10 vbatt sense high:	1.19 V	fail
+PA4 bleeding low:	1.19 V	fail
+PA4 bleeding high:	1.19 V	fail
+Reset pulse:		0 mS	fail
+Vcoil:			4.91 V	pass
+Vcoil:			3.53 V	pass
+
+
+
+
+Tag Test Report
+Serial Number:		
+Time:			Thu Oct 10 17:37:01 2019
+
+Vbatt:			3.30 V	pass
+Vmcu:			3.31 V	pass
+Vreg:			1.85 V	pass
+PF6 LED Low:		1.19 V	fail
+PF6 LED High:		1.19 V	fail
+PC10 vbatt sense low:	1.19 V	fail
+PC10 vbatt sense high:	1.20 V	fail
+PA4 bleeding low:	1.19 V	fail
+PA4 bleeding high:	1.19 V	fail
+Reset pulse:		0 mS	fail
+Vcoil:			1.19 V	fail
+Vcoil:			3.90 V	pass
+
+
+
+
+Tag Test Report
+Serial Number:		
+Time:			Thu Oct 10 17:37:46 2019
+
+Vbatt:			3.30 V	pass
+Vmcu:			3.49 V	fail
+Vreg:			1.84 V	pass
+PF6 LED Low:		1.19 V	fail
+PF6 LED High:		1.19 V	fail
+PC10 vbatt sense low:	1.19 V	fail
+PC10 vbatt sense high:	1.19 V	fail
+PA4 bleeding low:	1.19 V	fail
+PA4 bleeding high:	1.19 V	fail
+Reset pulse:		0 mS	fail
+Vcoil:			1.19 V	fail
+Vcoil:			3.83 V	pass
+
+
+
+
+Tag Test Report
+Serial Number:		
+Time:			Thu Oct 10 17:41:37 2019
+
+Vbatt:			3.43 V	pass
+Vmcu:			3.39 V	pass
+Vreg:			1.09 V	fail
+PF6 LED Low:		1.19 V	fail
+PF6 LED High:		1.19 V	fail
+PC10 vbatt sense low:	1.19 V	fail
+PC10 vbatt sense high:	1.19 V	fail
+PA4 bleeding low:	1.19 V	fail
+PA4 bleeding high:	1.19 V	fail
+Reset pulse:		0 mS	fail
+Vcoil:			5.00 V	pass
+Vcoil:			4.20 V	pass
+
+
+
+
+Tag Test Report
+Serial Number:		
+Time:			Thu Oct 10 17:44:45 2019
+
+Vbatt:			3.43 V	pass
+Vmcu:			1.19 V	fail
+Vreg:			1.09 V	fail
+PF6 LED Low:		1.19 V	fail
+PF6 LED High:		1.19 V	fail
+PC10 vbatt sense low:	1.19 V	fail
+PC10 vbatt sense high:	1.19 V	fail
+PA4 bleeding low:	1.19 V	fail
+PA4 bleeding high:	1.19 V	fail
+Reset pulse:		0 mS	fail
+Vcoil:			5.00 V	pass
+Vcoil:			4.21 V	fail
+
+
+
+
+Tag Test Report
+Serial Number:		
+Time:			Fri Oct 25 15:38:17 2019
+
+Vbatt:			1.15 V	fail
+Vmcu:			1.15 V	fail
+Vreg:			1.15 V	fail
+PF6 LED Low:		1.15 V	fail
+PF6 LED High:		1.15 V	fail
+Tag Test Report
+Serial Number:		
+Time:			Fri Oct 25 15:39:42 2019
+
+Vbatt:			1.15 V	fail
+Vmcu:			1.15 V	fail
+Vreg:			1.15 V	fail
+PF6 LED Low:		1.15 V	fail
+PF6 LED High:		1.15 V	fail
+PC10 vbatt sense low:	1.15 V	fail
+PC10 vbatt sense high:	1.15 V	fail
+PA4 bleeding low:	1.15 V	Tag Test Report
+Serial Number:		
+Time:			Fri Oct 25 16:03:26 2019
+
+Vbatt:			1.15 V	fail
+Vmcu:			1.15 V	fail
+Vreg:			1.14 V	Tag Test Report
+Serial Number:		
+Time:			Fri Oct 25 16:09:55 2019
+
+Vbatt:			1.14 V	fail
+Tag Test Report
+Serial Number:		
+Time:			Wed Oct 30 15:54:21 2019
+
+Vbatt:			1.15 V	fail
+Vmcu:			1.15 V	fail
+Vreg:			1.15 V	Tag Test Report
+Serial Number:		
+Time:			Wed Oct 30 16:40:37 2019
+
+Vbatt:			1.13 V	fail
+Vmcu:			1.14 V	fail
+Vreg:			1.13 V	fail
+PF6 LED Low:		1.14 V	fail
+PF6 LED High:		1.14 V	fail
+PC10 vbatt sense low:	1.14 V	fail
+PC10 vbatt sense high:	1.14 V	fail
+PA4 bleeding low:	1.14 V	fail
+PA4 bleeding high:	1.14 V	fail
+Reset pulse:		0 mS	fail
+Vcoil:			1.14 V	fail
+Vcoil:			1.14 V	fail
+
+
+
+
+Tag Test Report
+Serial Number:		
+Time:			Wed Oct 30 16:44:19 2019
+
+Vbatt:			1.13 V	fail
+Vmcu:			1.13 V	fail
+Vreg:			1.13 V	fail
+PF6 LED Low:		1.13 V	fail
+PF6 LED High:		1.14 V	fail
+PC10 vbatt sense low:	1.14 V	fail
+PC10 vbatt sense high:	1.14 V	Tag Test Report
+Serial Number:		
+Time:			Wed Oct 30 16:55:29 2019
+
+Vbatt:			1.14 V	fail
+Vmcu:			1.14 V	fail
+Vreg:			1.14 V	fail
+PF6 LED Low:		1.14 V	fail
+PF6 LED High:		1.15 V	fail
+PC10 vbatt sense low:	1.14 V	fail
+PC10 vbatt sense high:	1.14 V	fail
+PA4 bleeding low:	1.14 V	fail
+PA4 bleeding high:	1.14 V	fail
+Reset pulse:		0 mS	fail
+Vcoil:			1.15 V	fail
+Vcoil:			1.15 V	fail
+
+
+
+
+Tag Test Report
+Serial Number:		
+Time:			Wed Oct 30 16:57:20 2019
+
+Vbatt:			1.14 V	fail
+Tag Test Report
+Serial Number:		
+Time:			Wed Oct 30 16:58:37 2019
+
+Vbatt:			1.14 V	fail
+Vmcu:			1.14 V	fail
+Vreg:			1.15 V	fail
+PF6 LED Low:		1.14 V	fail
+PF6 LED High:		1.14 V	fail
+PC10 vbatt sense low:	1.14 V	fail
+PC10 vbatt sense high:	1.14 V	fail
+PA4 bleeding low:	1.14 V	fail
+PA4 bleeding high:	1.15 V	fail
+Reset pulse:		0 mS	fail
+Vcoil:			1.15 V	fail
+Vcoil:			1.15 V	fail
+
+
+
+
+Tag Test Report
+Serial Number:		
+Time:			Wed Oct 30 16:59:30 2019
+
+Vbatt:			1.14 V	fail
+Vmcu:			1.14 V	fail
+Vreg:			1.14 V	fail
+PF6 LED Low:		1.14 V	fail
+PF6 LED High:		1.14 V	fail
+PC10 vbatt sense low:	1.14 V	fail
+PC10 vbatt sense high:	1.15 V	fail
+PA4 bleeding low:	1.14 V	fail
+PA4 bleeding high:	1.14 V	fail
+Reset pulse:		0 mS	fail
+Vcoil:			1.15 V	fail
+Vcoil:			1.15 V	fail
+
+
+
+
+Tag Test Report
+Serial Number:		
+Time:			Fri Nov  1 09:45:11 2019
+
+Vbatt:			1.15 V	fail
+Vmcu:			1.15 V	fail
+Vreg:			1.15 V	fail
+PF6 LED Low:		1.15 V	fail
+PF6 LED High:		1.15 V	fail
+PC10 vbatt sense low:	1.15 V	fail
+PC10 vbatt sense high:	1.15 V	fail
+PA4 bleeding low:	1.15 V	fail
+PA4 bleeding high:	1.14 V	fail
+Reset pulse:		0 mS	fail
+Vcoil:			1.15 V	fail
+Vcoil:			1.15 V	fail
+
+
+
+
+Tag Test Report
+Serial Number:		
+Time:			Fri Nov  1 11:43:47 2019
+
+Vbatt:			2.52 V	fail
+Vmcu:			1.12 V	fail
+Vreg:			2.55 V	fail
+PF6 LED Low:		2.45 V	fail
+PF6 LED High:		2.45 V	fail
+PC10 vbatt sense low:	1.12 V	fail
+PC10 vbatt sense high:	1.12 V	fail
+PA4 bleeding low:	2.65 V	fail
+PA4 bleeding high:	2.64 V	fail
+Reset pulse:		0 mS	fail
+Vcoil:			1.13 V	fail
+Vcoil:			2.52 V	fail
+
+
+
+
+Tag Test Report
+Serial Number:		
+Time:			Fri Nov  1 11:44:39 2019
+
+Vbatt:			3.49 V	pass
+Vmcu:			1.12 V	fail
+Vreg:			1.76 V	pass
+PF6 LED Low:		0.00 V	pass
+PF6 LED High:		3.34 V	pass
+PC10 vbatt sense low:	1.12 V	fail
+PC10 vbatt sense high:	1.12 V	fail
+PA4 bleeding low:	0.00 V	pass
+PA4 bleeding high:	3.33 V	pass
+Reset pulse:		0 mS	fail
+Vcoil:			1.13 V	fail
+Vcoil:			3.59 V	pass
+
+
+
+
+Tag Test Report
+Serial Number:		
+Time:			Fri Nov  1 11:45:41 2019
+
+Vbatt:			3.24 V	pass
+Vmcu:			1.13 V	fail
+Vreg:			1.81 V	pass
+PF6 LED Low:		0.02 V	pass
+PF6 LED High:		3.42 V	pass
+PC10 vbatt sense low:	1.13 V	fail
+PC10 vbatt sense high:	1.13 V	fail
+PA4 bleeding low:	0.02 V	pass
+PA4 bleeding high:	3.42 V	pass
+Reset pulse:		0 mS	fail
+Vcoil:			1.13 V	fail
+Vcoil:			3.49 V	pass
+
+
+
+
+Tag Test Report
+Serial Number:		
+Time:			Fri Nov  1 12:00:58 2019
+
+Vbatt:			3.11 V	pass
+Vmcu:			3.44 V	fail
+Vreg:			1.83 V	pass
+PF6 LED Low:		0.04 V	pass
+PF6 LED High:		3.45 V	pass
+PC10 vbatt sense low:	0.04 V	pass
+PC10 vbatt sense high:	3.45 V	pass
+PA4 bleeding low:	0.04 V	pass
+PA4 bleeding high:	3.44 V	pass
+Reset pulse:		8.4 mS	pass
+Vcoil:			4.90 V	pass
+Vcoil:			3.45 V	pass
+
+
+
+
+Tag Test Report
+Serial Number:		
+Time:			Fri Nov  1 12:01:29 2019
+
+Vbatt:			3.15 V	pass
+Vmcu:			3.38 V	pass
+Vreg:			1.87 V	pass
+PF6 LED Low:		0.04 V	pass
+PF6 LED High:		3.44 V	pass
+PC10 vbatt sense low:	0.04 V	pass
+PC10 vbatt sense high:	3.44 V	pass
+PA4 bleeding low:	0.04 V	pass
+PA4 bleeding high:	3.44 V	pass
+Reset pulse:		8.37 mS	pass
+Vcoil:			4.90 V	pass
+Vcoil:			3.55 V	pass
+
+
+
+
+Tag Test Report
+Serial Number:		
+Time:			Fri Nov  1 12:02:11 2019
+
+Vbatt:			3.12 V	pass
+Vmcu:			3.40 V	pass
+Vreg:			1.87 V	pass
+PF6 LED Low:		0.04 V	pass
+PF6 LED High:		3.44 V	pass
+PC10 vbatt sense low:	0.04 V	pass
+PC10 vbatt sense high:	3.44 V	pass
+PA4 bleeding low:	0.04 V	pass
+PA4 bleeding high:	3.44 V	pass
+Reset pulse:		8.37 mS	pass
+Vcoil:			4.90 V	pass
+Vcoil:			3.54 V	pass
+
+
+
+
+Tag Test Report
+Serial Number:		
+Time:			Fri Nov  1 12:14:30 2019
+
+Vbatt:			3.15 V	pass
+Vmcu:			3.37 V	pass
+Vreg:			1.86 V	pass
+PF6 LED Low:		0.03 V	pass
+PF6 LED High:		3.43 V	pass
+PC10 vbatt sense low:	0.03 V	pass
+PC10 vbatt sense high:	3.43 V	pass
+PA4 bleeding low:	0.03 V	pass
+PA4 bleeding high:	3.43 V	pass
+Reset pulse:		8.41 mS	pass
+Vcoil:			4.91 V	pass
+Vcoil:			3.19 V	pass
+
+
+
+
+Tag Test Report
+Serial Number:		
+Time:			Fri Nov  1 12:16:08 2019
+
+Vbatt:			3.04 V	pass
+Vmcu:			3.37 V	pass
+Vreg:			1.83 V	pass
+PF6 LED Low:		0.03 V	pass
+PF6 LED High:		3.43 V	pass
+PC10 vbatt sense low:	0.03 V	pass
+PC10 vbatt sense high:	3.43 V	pass
+PA4 bleeding low:	0.03 V	pass
+PA4 bleeding high:	3.43 V	pass
+Reset pulse:		8.33 mS	pass
+Vcoil:			4.90 V	pass
+Vcoil:			3.51 V	pass
+
+
+
+
+Tag Test Report
+Serial Number:		
+Time:			Fri Nov  1 12:16:40 2019
+
+Vbatt:			3.07 V	pass
+Vmcu:			3.37 V	pass
+Vreg:			1.86 V	pass
+PF6 LED Low:		0.03 V	pass
+PF6 LED High:		3.44 V	pass
+PC10 vbatt sense low:	0.03 V	pass
+PC10 vbatt sense high:	3.44 V	pass
+PA4 bleeding low:	0.03 V	pass
+PA4 bleeding high:	3.43 V	pass
+Reset pulse:		8.36 mS	pass
+Vcoil:			4.91 V	pass
+Vcoil:			3.51 V	pass
+
+
+
+
+Tag Test Report
+Serial Number:		
+Time:			Fri Nov  1 12:26:41 2019
+
+Vbatt:			3.68 V	pass
+Vmcu:			3.35 V	pass
+Vreg:			1.74 V	pass
+PF6 LED Low:		0.00 V	pass
+PF6 LED High:		3.35 V	pass
+PC10 vbatt sense low:	0.00 V	pass
+PC10 vbatt sense high:	3.35 V	pass
+PA4 bleeding low:	0.00 V	pass
+PA4 bleeding high:	3.34 V	pass
+Reset pulse:		0 mS	fail
+Vcoil:			4.99 V	pass
+Vcoil:			4.20 V	pass
+
+
+
+
+Tag Test Report
+Serial Number:		
+Time:			Fri Nov  1 12:27:30 2019
+
+Vbatt:			3.22 V	pass
+Vmcu:			3.38 V	pass
+Vreg:			1.86 V	pass
+PF6 LED Low:		0.03 V	pass
+PF6 LED High:		3.43 V	pass
+PC10 vbatt sense low:	0.03 V	pass
+PC10 vbatt sense high:	3.43 V	pass
+PA4 bleeding low:	0.03 V	pass
+PA4 bleeding high:	3.42 V	pass
+Reset pulse:		8.14 mS	pass
+Vcoil:			4.99 V	pass
+Vcoil:			4.20 V	pass
+
+
+
+
+Tag Test Report
+Serial Number:		
+Time:			Fri Nov  1 12:29:07 2019
+
+Vbatt:			3.21 V	pass
+Vmcu:			3.37 V	pass
+Vreg:			1.85 V	pass
+PF6 LED Low:		0.02 V	pass
+PF6 LED High:		3.42 V	pass
+PC10 vbatt sense low:	0.02 V	pass
+PC10 vbatt sense high:	3.42 V	pass
+PA4 bleeding low:	0.02 V	pass
+PA4 bleeding high:	3.41 V	pass
+Reset pulse:		8.2 mS	pass
+Vcoil:			4.99 V	pass
+Vcoil:			4.20 V	pass
+
+
+
+
+Tag Test Report
+Serial Number:		
+Time:			Fri Nov  1 12:29:57 2019
+
+Vbatt:			3.19 V	pass
+Vmcu:			3.37 V	pass
+Vreg:			1.84 V	pass
+PF6 LED Low:		0.02 V	pass
+PF6 LED High:		3.42 V	pass
+PC10 vbatt sense low:	0.02 V	pass
+PC10 vbatt sense high:	3.42 V	pass
+PA4 bleeding low:	0.02 V	pass
+PA4 bleeding high:	3.41 V	pass
+Reset pulse:		8.18 mS	pass
+Vcoil:			4.99 V	pass
+Vcoil:			4.14 V	pass
+
+
+
+
+Tag Test Report
+Serial Number:		
+Time:			Fri Nov  1 12:33:35 2019
+
+Vbatt:			3.20 V	pass
+Vmcu:			3.37 V	pass
+Vreg:			1.84 V	pass
+PF6 LED Low:		0.02 V	pass
+PF6 LED High:		3.42 V	pass
+PC10 vbatt sense low:	0.02 V	pass
+PC10 vbatt sense high:	3.42 V	pass
+PA4 bleeding low:	0.02 V	pass
+PA4 bleeding high:	3.41 V	pass
+Reset pulse:		8.17 mS	pass
+Vcoil:			4.94 V	pass
+Vcoil:			4.20 V	pass
+
+
+
+
+Tag Test Report
+Serial Number:		
+Time:			Fri Nov  1 12:40:07 2019
+
+Vbatt:			3.20 V	pass
+Vmcu:			3.37 V	pass
+Vreg:			1.85 V	pass
+PF6 LED Low:		0.02 V	pass
+PF6 LED High:		3.42 V	pass
+PC10 vbatt sense low:	0.02 V	pass
+PC10 vbatt sense high:	3.42 V	pass
+PA4 bleeding low:	0.02 V	pass
+PA4 bleeding high:	3.41 V	pass
+Reset pulse:		8.13 mS	pass
+Vcoil:			4.93 V	pass
+Vcoil:			4.20 V	pass
+
+
+
+
+Tag Test Report
+Serial Number:		
+Time:			Fri Nov  1 16:07:08 2019
+
+Vbatt:			3.17 V	pass
+Vmcu:			3.36 V	pass
+Vreg:			1.85 V	pass
+PF6 LED Low:		0.03 V	pass
+PF6 LED High:		3.42 V	pass
+PC10 vbatt sense low:	0.03 V	pass
+PC10 vbatt sense high:	3.42 V	pass
+PA4 bleeding low:	0.02 V	pass
+PA4 bleeding high:	3.42 V	pass
+Reset pulse:		8.02 mS	pass
+Vcoil:			4.94 V	pass
+Vcoil:			4.19 V	pass
+
+
+
+
+Tag Test Report
+Serial Number:		
+Time:			Fri Nov  1 16:14:21 2019
+
+Vbatt:			3.17 V	Tag Test Report
+Serial Number:		
+Time:			Fri Nov  1 16:34:36 2019
+
+Vbatt:			3.12 V	pass
+Vmcu:			3.36 V	pass
+Vreg:			1.85 V	pass
+PF6 LED Low:		0.03 V	pass
+PF6 LED High:		3.42 V	pass
+PC10 vbatt sense low:	0.03 V	pass
+PC10 vbatt sense high:	3.42 V	pass
+PA4 bleeding low:	0.03 V	pass
+PA4 bleeding high:	3.42 V	pass
+Reset pulse:		8.09 mS	pass
+Vcoil:			4.93 V	pass
+Vcoil:			4.19 V	Tag Test Report
+Serial Number:		
+Time:			Mon Nov  4 09:55:01 2019
+
+Vbatt:			3.12 V	pass
+Vmcu:			3.37 V	pass
+Vreg:			1.87 V	pass
+PF6 LED Low:		0.03 V	pass
+PF6 LED High:		3.44 V	pass
+PC10 vbatt sense low:	0.03 V	pass
+PC10 vbatt sense high:	3.44 V	pass
+PA4 bleeding low:	0.03 V	pass
+PA4 bleeding high:	3.48 V	pass
+Reset pulse:		7.71 mS	pass
+Vcoil:			4.91 V	pass
+Vcoil:			4.20 V	pass
+Charging Current:	-171.96 mA
+Programmed Current:	99.24 mA
+
+
+
+

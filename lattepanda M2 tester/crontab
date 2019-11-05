@@ -1,0 +1,2 @@
+@reboot sleep 13 && export DISPLAY=:0 && sh ~/M2Tester.sh
+

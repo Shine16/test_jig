@@ -1,0 +1,644 @@
+insert M.2
+press start and hold for 3 sec
+
+
+    1  sudo reboot -h now
+    2  top -d 1
+    3  lspci
+    4  ifconfig 
+    5  ps ax | grep ssh
+    6  sudo apt update
+    7  sudo su -
+    8  pwd
+    9  cd Downloads/
+   10  ls
+   11  cd AX99100_SP_PP_SPI_LINUX_Driver_v1.4.0_Source/
+   12  make
+   13  insmod ax99100.ko 
+   14  sudo insmod ax99100.ko 
+   15  ls -la /dev/ttyF*
+   16  sudo apt install git screen
+   17  screen -F /dev/ttyF0 115200
+   18  screen /dev/ttyF0 115200
+   19  screen -R /dev/ttyF0 115200
+   20  screen /dev/ttyF0
+   21  cd ..
+   22  mkdir openthread
+   23  cd openthread/
+   24  git clone https://github.com/openthread/wpantund
+   25  sudo apt-get install dbus libreadline
+   26  sudo apt-get install gcc g++ libdbus-1-dev libboost-dev libreadline-dev
+   27  sudo apt-get install libtool autoconf autoconf-archive
+   28  sudo apt install openssh-server
+   29  ifconfig 
+   30  ./boo
+   31  cd wpantund/
+   32  ./bootstrap.sh 
+   33  cat /proc/cpuinfo 
+   34  ./configure --sysconfdir=/etc
+   35  make -j 8
+   36  sudo make install
+   37  cd ../../AX99100_SP_PP_SPI_LINUX_Driver_v1.4.0_Source/
+   38  gcc -o select_BR.c select_BR
+   39  gcc -o select_BR select_BR.c
+   40  touch select_BR.c
+   41  gcc -o select_BR select_BR.c
+   42  ./select_BR 
+   43  sudo ./select_BR 
+   44  cd ..
+   45  pwd
+   46  sudo nano /etc/wpantund.conf 
+   47  ls -la
+   48  chmod a+x ot-ncp 
+   49  sudo wpantund 
+   50  cd AX99100_SP_PP_SPI_LINUX_Driver_v1.4.0_Source/
+   51  ./select_BR 
+   52  sudo ./select_BR 
+   53  sudo wpantund 
+   54  lspci
+   55  sudo wpantund 
+   56  sudo poweroff
+   57  cd Downloads/AX99100_SP_PP_SPI_LINUX_Driver_v1.4.0_Source/
+   58  sudo ./select_BR 
+   59  sudo insmod ax99100.ko 
+   60  sudo ./select_BR 
+   61  sudo wpantund 
+   62  sudo ./select_BR 
+   63  lspci
+   64  sudo ./select_BR 
+   65  sudo wpantund 
+   66  sudo /home/biqmind/Downloads/ot-ncp /dev/ttyF0
+   67  sudo apt install meld
+   68  make
+   69  sudo rmmod ax99100 
+   70  sudo insmod ax99100.ko 
+   71  sudo ./select_BR 
+   72  sudo wpantund 
+   73  sudo rmmod ax99100 
+   74  make
+   75  sudo insmod ax99100.ko 
+   76  dmesg 
+   77  sudo ./select_BR 
+   78  sudo wpantund 
+   79  cd ..
+   80  git clone https://github.com/biqmind/svcthreadradio
+   81  cd svcthreadradio/AX99100_SP_PP_SPI_LINUX_Driver_v1.3.0_Source/
+   82  make
+   83  sudo rmmod ax99100 
+   84  sudo insmod ax99100.ko 
+   85  sudo ./select_BR 
+   86  wpantund 
+   87  sudo wpantund 
+   88  sudo rmmod ax99100 
+   89  make
+   90  sudo insmod ax99100.ko 
+   91  dmesg 
+   92  sudo wpantund 
+   93  poweroff 
+   94  mc
+   95  sudo apt install mc
+   96  mc
+   97  cd Downloads/svcthreadradio/
+   98  ls
+   99  cd ..
+  100  ls
+  101  ls -la
+  102  cd svcthreadradio/AX99100_SP_PP_SPI_LINUX_Driver_v1.3.0_Source/
+  103  sudo insmod ax99100.ko 
+  104  sudo ./select_BR 
+  105  sudo wpantund 
+  106  ifconfig 
+  107  ls
+  108  ls /dev/ttyF*
+  109  sudo wpantund 
+  110  cd Downloads/svcthreadradio/AX99100_SP_PP_SPI_LINUX_Driver_v1.3.0_Source/
+  111  sudo ./select_BR 
+  112  sudo wpantund 
+  113  sudo lspci -vvv
+  114  sudo wpantund 
+  115  sudo poweroff 
+  116  sudo lspci -vvv
+  117  cd Downloads/svcthreadradio/AX99100_SP_PP_SPI_LINUX_Driver_v1.3.0_Source/
+  118  ls
+  119  biqmind
+  120  ls
+  121  sudo insmod ax99100.ko 
+  122  sudo ./select_BR 
+  123  wpants
+  124  sudo wpantund 
+  125  sudo ./select_BR 
+  126  sudo wpantund 
+  127  md5sum ../../ot-ncp 
+  128  sudo ./select_BR /dev/ttyF1
+  129  sudo ../../ot-ncp /dev/ttyF1
+  130  sudo ../../ot-ncp /dev/ttyF0
+  131  sudo nano /etc/wpantund.conf 
+  132  sudo wpantund 
+  133  nano ax99100_sp.c 
+  134  make
+  135  sudo rmmod ax99100 
+  136  sudo insmod ax99100.ko 
+  137  dmesg 
+  138  sudo ./select_BR 
+  139  sudo wpantund 
+  140  sudo ./select_BR /dev/ttyF0 0
+  141  sudo nano select_BR
+  142  sudo nano select_BR.c 
+  143  gcc -o select_BR select_BR.c 
+  144  sudo ./select_BR
+  145  sudo wpantund 
+  146  sudo nano select_BR.c 
+  147  gcc -o select_BR select_BR.c 
+  148  sudo ./select_BR
+  149  sudo wpantund 
+  150  ldd ../../ot-ncp 
+  151  sudo nano select_BR.c 
+  152  gcc -o select_BR select_BR.c 
+  153  sudo ./select_BR
+  154  sudo wpantund 
+  155  nano ax99100_sp.c 
+  156  make
+  157  sudo rmmod ax99100 
+  158  sudo insmod ax99100.ko 
+  159  dmesg 
+  160  sudo ./select_BR 
+  161  nano ax99100_sp
+  162  nano ax99100_sp.c 
+  163  sudo rmmod ax99100 
+  164  make
+  165  sudo insmod ax99100.ko 
+  166  sudo ./select_BR 
+  167  sudo ./select_BR /dev/ttyF1
+  168  sudo ./select_BR 
+  169  sudo wpantund 
+  170  /home/biqmind/Downloads/ot-ncp /dev/ttyF1
+  171  sudo /home/biqmind/Downloads/ot-ncp /dev/ttyF1
+  172  sudo /home/biqmind/Downloads/ot-ncp /dev/ttyF0
+  173  sudo poweroff 
+  174  mc
+  175  lspci 
+  176  lspci -s 01
+  177  lspci -vvvvvs 01
+  178  lspci -vvvvv -s 01:00
+  179  sudo lspci -vvvvv -s 01:00
+  180  sudo insmod Downloads/svcthreadradio/AX99100_SP_PP_SPI_LINUX_Driver_v1.3.0_Source/ax99100.ko 
+  181  sudo lspci -vvvvv -s 01:00
+  182  cd Downloads/svcthreadradio/AX99100_SP_PP_SPI_LINUX_Driver_v1.3.0_Source/
+  183  ls
+  184  nano ax99100_sp.
+  185  nano ax99100_sp.c
+  186  make
+  187  sudo rmmod ax99100 
+  188  sudo insmod ax99100.ko 
+  189  dmesg 
+  190  tail -f /var/log/dmesg 
+  191  tail -f /var/log/kern.log 
+  192  nano ax99100_sp.c
+  193  sudo rmmod ax99100 
+  194  make
+  195  sudo insmod ax99100.ko 
+  196  tail -f /var/log/kern.log 
+  197  nano ax99100_sp.c
+  198  make
+  199  sudo rmmod ax99100 
+  200  sudo insmod ax99100.ko 
+  201  tail -f /var/log/dmesg 
+  202  dmesg 
+  203  sudo rmmod ax99100 
+  204  nano ax99100_sp.c
+  205  sudo rmmod ax99100 
+  206  make
+  207  sudo insmod ax99100.ko 
+  208  tail -f /var/log/dmesg 
+  209  tail -f /var/log/kern.log 
+  210  sudo insmod Downloads/svcthreadradio/AX99100_SP_PP_SPI_LINUX_Driver_v1.3.0_Source/
+  211  sudo insmod Downloads/svcthreadradio/AX99100_SP_PP_SPI_LINUX_Driver_v1.3.0_Source/ax99100.ko 
+  212  dmesg 
+  213  sudo wpantund 
+  214  lspci 
+  215  sudo lspci -vvvv -s 01:00
+  216  cd Downloads/svcthreadradio/AX99100_SP_PP_SPI_LINUX_Driver_v1.3.0_Source/
+  217  sudo ./select_BR 
+  218  sudo wpantund 
+  219  dmesg 
+  220  sudo poweroff 
+  221  sudo su -
+  222  ls -la /dev/nv*
+  223  sudo su -
+  224  sudo modprobe nvram 
+  225  sudo su -
+  226  dmesg | grep drm
+  227  free
+  228  dmesg | grep -i bios
+  229  sudo su -
+  230  efibootmgr 
+  231  efibootmgr -h
+  232  efibootmgr -0 0006,0003,0000
+  233  efibootmgr -h
+  234  efibootmgr
+  235  efibootmgr -0 0006,0003,0000
+  236  efibootmgr -o 0006,0003,0000
+  237  sudo efibootmgr -o 0006,0003,0000
+  238  sudo efibootmgr -n 0003
+  239  sudo efibootmgr -t 5
+  240  sudo efibootmgr -t 2
+  241  sudo efibootmgr --timeout 5
+  242  sudo reboot
+  243  cd Downloads/svcthreadradio/AX99100_SP_PP_SPI_LINUX_Driver_v1.3.0_Source/
+  244  top -d 1
+  245  init 3
+  246  sudo init 3
+  247  cd Downloads/svcthreadradio/AX99100_SP_PP_SPI_LINUX_Driver_v1.3.0_Source/
+  248  nano ax99100_sp.c 
+  249  make
+  250  sudo insmod ax99100.ko 
+  251  dmesg 
+  252  sudo nano /etc/wpantund.conf 
+  253  cd Downloads/svcthreadradio/AX99100_SP_PP_SPI_LINUX_Driver_v1.3.0_Source/
+  254  nano /etc/wpantund.conf 
+  255  sudo nano /etc/wpantund.conf 
+  256  sudo wpantund 
+  257  cd Downloads/
+  258  ls -la
+  259  sudo insmod svcthreadradio/AX99100_SP_PP_SPI_LINUX_Driver_v1.3.0_Source/ax99100.ko 
+  260  sudo wpantund 
+  261  cd svcthreadradio/
+  262  cd AX99100_SP_PP_SPI_LINUX_Driver_v1.3.0_Source/
+  263  ./select_BR 
+  264  sudo ./select_BR 
+  265  nano select_BR.c 
+  266  gcc -o select_BR select_BR.c
+  267  sudo ./select_BR 
+  268  ls -al
+  269  cd coap-repeater/
+  270  yarn start
+  271  npm run start
+  272  curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+  273  sudo apt-get install curl
+  274  curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+  275  echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+  276  sudo apt-get update && sudo apt-get install yarn
+  277  yarn
+  278  node --version
+  279  nodejs --version
+  280  sudo apt-get install nodejs
+  281  curl -sL https://deb.nodesource.com/setup_8.x -o nodesource_setup.sh
+  282  curl -sL https://deb.nodesource.com/setup_11.x -o nodesource_setup.sh
+  283  sudo apt-get install nodejs
+  284  curl -sL https://deb.nodesource.com/setup_11.x -o nodesource_setup.sh
+  285  ls
+  286  chmod a+x nodesource_setup.sh 
+  287  ./nodesource_setup.sh 
+  288  sudo ./nodesource_setup.sh 
+  289  sudo apt-get update && sudo apt-get install yarn
+  290  nodejs --version
+  291  curl -sL https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+  292  sudo apt-get install -y nodejs
+  293  nodejs --version
+  294  yarn
+  295  yarn start
+  296  tail -f logs/coap.log 
+  297  exit
+  298  sudo su -
+  299  ssh 192.168.1.25
+  300  ssh 192.168.1.21
+  301  sudo su -
+  302  ls -la
+  303  sudo su -
+  304  ls
+  305  cd Downloads/
+  306  ./ot-daemon -h
+  307  sudo su -
+  308  cd Downloads/
+  309  ls
+  310  cd AX99100_SP_PP_SPI_LINUX_Driver_v1.4.0_Source/
+  311  ls
+  312  sudo rmmod ax99100 
+  313  nano ax99100_sp.c 
+  314  make
+  315  sudo insmod ax99100.ko 
+  316  dmesg 
+  317  nano ax99100_sp.c 
+  318  make
+  319  sudo rmmod ax99100 
+  320  nano ax99100_sp.c 
+  321  make
+  322  sudo insmod ax99100.ko 
+  323  dmesg 
+  324  sudo rmmod ax99100 
+  325  nano ax99100_sp.c 
+  326  make
+  327  sudo insmod ax99100.ko 
+  328  dmesg 
+  329  sudo rmmod ax99100 
+  330  nano ax99100_sp.c 
+  331  make
+  332  sudo insmod ax99100.ko 
+  333  dmesg 
+  334  nano ax99100_sp.c 
+  335  sudo rmmod ax99100 
+  336  make
+  337  sudo insmod ax99100.ko 
+  338  sudo rmmod ax99100 
+  339  nano ax99100_sp.c 
+  340  make
+  341  sudo insmod ax99100.ko 
+  342  sudo wpanctl 
+  343  sudo modprobe dummyy
+  344  sudo modprobe dummy
+  345  ip link set bq0 dummy
+  346  ip link set dummy bq0
+  347  ifconfig 
+  348  sudo wpanctl
+  349  cat ../svcthreadradio/AX99100_SP_PP_SPI_LINUX_Driver_v1.3.0_Source/driver-init.sh 
+  350  sudo su -
+  351  sudo tcpdump -vvvvvvvAXni wpan0
+  352  ifconfig 
+  353  ip ro
+  354  cd ~/coap-repeater/
+  355  tail -f logs/coap.log 
+  356  ls
+  357  cd Downloads/
+  358  ls
+  359  cd AX99100_SP_PP_SPI_LINUX_Driver_v1.4.0_Source/
+  360  sudo insmod ax99100.ko 
+  361  cd ..
+  362  ls
+  363  insmod svcthreadradio/AX99100_SP_PP_SPI_LINUX_Driver_v1.3.0_Source/ax99100.ko 
+  364  sudo insmod svcthreadradio/AX99100_SP_PP_SPI_LINUX_Driver_v1.3.0_Source/ax99100.ko 
+  365  uname -r
+  366  cd svcthreadradio/AX99100_SP_PP_SPI_LINUX_Driver_v1.3.0_Source/
+  367  make
+  368  sudo insmod ax99100.ko 
+  369  cd ..
+  370  ls
+  371  cd ..
+  372  ls
+  373  sudo su -
+  374  sudo su -
+  375  admin123
+  376  uname -r
+  377  sudo su -
+  378  cd coap-repeater/
+  379  tail -f logs/coap.log 
+  380  cd coap-repeater/
+  381  tail -f logs/coap.log 
+  382  cd Downloads/AX99100_SP_PP_SPI_LINUX_Driver_v1.4.0_Source/
+  383  nano ax99100_sp.c
+  384  make
+  385  cd ../../coap-repeater/
+  386  yarn start
+  387  sudo ip link add bq0 type duppy
+  388  sudo ip link add bq0 type dummy
+  389  sudo ip link set bq0 up
+  390  sudo ip addr add fdde::1 dev bq0
+  391  ls
+  392  sudo su
+  393  cd Downloads/AX99100_SP_PP_SPI_LINUX_Driver_v1.4.0_Source/
+  394  nano ax99100_sp.c 
+  395  dmesg 
+  396  make
+  397  nano ax99100_sp.c 
+  398  sudo rmmod ax99100 
+  399  sudo insmod ax99100.ko 
+  400  dmesg 
+  401  sudo su -
+  402  ls
+  403  gnome-terminal
+  404  cd .gconf/
+  405  ls
+  406  ls -la
+  407  cd ..
+  408  sudo su 
+  409  ls
+  410  cd coap-repeater/
+  411  ls
+  412  cd ..
+  413  ls
+  414  cd Do
+  415  cd Documents/
+  416  cd ..
+  417  cd Downloads/
+  418  ls
+  419  cd AX99100_SP_PP_SPI_LINUX_Driver_v1.4.0_Source/
+  420  make
+  421  ls
+  422  sudo insmod ax99100.ko 
+  423  cd Downloads/
+  424  cd AX99100_SP_PP_SPI_LINUX_Driver_v1.4.0_Source/
+  425  ls
+  426  cat readme
+  427  ls
+  428  cat ax99100_sp.c
+  429  exit
+  430  ls
+  431  date
+  432  uptime
+  433  uname -a
+  434  cat /proc /cpuinfo
+  435  cat /proc/cpuinfo
+  436  df
+  437  top
+  438  tail dmesg
+  439  dmseg
+  440  dmesg
+  441  tail dmesg
+  442  dmesg
+  443  tail /var/log/dmesg 
+  444  tail /var/log/syslog
+  445  tail -f /var/log/syslog
+  446  ls
+  447  cd Downloads
+  448  ls
+  449  cd openthread/
+  450  ls
+  451  cd wpantund/
+  452  ls
+  453  cd Downloads/
+  454  ls
+  455  cd AX99100_SP_PP_SPI_LINUX_Driver_v1.4.0_Source/
+  456  ls
+  457  pwd
+  458  cd ..
+  459  ls
+  460  cd biqmind/Downloads/AX99100_SP_PP_SPI_LINUX_Driver_v1.4.0_Source/
+  461  ls
+  462  cd ..
+  463  dmseg
+  464  dmesg
+  465  ls
+  466  cd Downloads/
+  467  cd AX99100_SP_PP_SPI_LINUX_Driver_v1.4.0_Source/
+  468  ls
+  469  ssh pi@10.0.0.1
+  470  ifconfig 
+  471  ip ro
+  472  sudo su -
+  473  ssh pi@10.0.0.1
+  474  ifconfig 
+  475  ssh pi@10.0.0.1
+  476  sudo reboot
+  477  sudo su
+  478  cd ..
+  479  exit
+  480  sudo su -
+  481  ls
+  482  cd Downloads/
+  483  ls
+  484  cd AX99100_SP_PP_SPI_LINUX_Driver_v1.4.0_Source/
+  485  sudo insmod ax99100.ko 
+  486  nano select_BR.c 
+  487  gcc -o select_BR select_BR.c
+  488  sudo ./select_BR 
+  489  dmesg 
+  490  pwd
+  491  sudo nano /etc/wpantund.conf
+  492  wpanctl scan -c 25
+  493  poweroff 
+  494  sudo poweroff 
+  495  ifconfig
+  496  sudo insmod /home/biqmind/Downloads/AX99100_SP_PP_SPI_LINUX_Driver_v1.4.0_Source/ax99100.ko 
+  497  sudo /home/biqmind/Downloads/AX99100_SP_PP_SPI_LINUX_Driver_v1.4.0_Source/select_BR 
+  498  sudo insmod /home/biqmind/Downloads/AX99100_SP_PP_SPI_LINUX_Driver_v1.4.0_Source/ax99100.ko 
+  499  sudo /home/biqmind/Downloads/AX99100_SP_PP_SPI_LINUX_Driver_v1.4.0_Source/select_BR 
+  500  sudo insmod /home/biqmind/Downloads/AX99100_SP_PP_SPI_LINUX_Driver_v1.4.0_Source/ax99100.ko 
+  501  sudo /home/biqmind/Downloads/AX99100_SP_PP_SPI_LINUX_Driver_v1.4.0_Source/select_BR 
+  502  ls /dev
+  503  history
+  504  ls -la /dev/ttyF*
+  505  ls -la /dev/
+  506  ls /dev/
+  507  sudo shutdown -h
+  508  sudo shutdown -h now
+  509  history
+  510  cd Desktop/
+  511  history > history.txt
+  512  wpanctl scan -c 25
+  513  cd Desktop/
+  514  sh test.sh
+  515  sudo insmod /home/biqmind/Downloads/AX99100_SP_PP_SPI_LINUX_Driver_v1.4.0_Source/ax99100.ko 
+  516  sudo /home/biqmind/Downloads/AX99100_SP_PP_SPI_LINUX_Driver_v1.4.0_Source/select_BR 
+  517  sudo wpantund &
+  518  sh test.sh
+  519  ls
+  520  chmod 777 test.sh
+  521  sh test.sh
+  522  ls
+  523  sh test.sh
+  524  insmod /home/biqmind/Downloads/AX99100_SP_PP_SPI_LINUX_Driver_v1.4.0_Source/ax99100.ko
+  525  sudo /home/biqmind/Downloads/AX99100_SP_PP_SPI_LINUX_Driver_v1.4.0_Source/select_BR
+  526  sudo wpantund &
+  527  sudo reboot
+  528  wpanctl scan -c 25
+  529  apt-get xdotool
+  530  apt-get install xdotool
+  531  sudo apt-get install xdotool
+  532  terminal -e apt-get
+  533  konsole -e apt-get
+  534  gnome-terminal -e apt-get
+  535  gnome-terminal -e wpanctl scan -c 25
+  536  gnome-terminal -e wpanctl scan 
+  537  gnome-terminal -e wpanctl scan -c 25
+  538  wpanctl scan -c 25
+  539  sh test.sh
+  540  sh M2Tester.sh 
+  541  sh test.sh
+  542  sh M2Tester.sh 
+  543  sudo reboot
+  544  sh M2Tester.sh 
+  545  wpanctl scan -c 25
+  546  sudo reboot
+  547  sh M2Tester.sh 
+  548  wpanctl scan -c 25
+  549  sudo reboot
+  550  sh M2Tester.sh 
+  551  biqmind
+  552  wpanctl scan -c 25
+  553  sudo reboot
+  554  sudo sh M2Tester.sh 
+  555  biqmind
+  556  sudo visdo
+  557  sudo visudo
+  558  sudo reboot
+  559  sudo sh M2Tester.sh 
+  560  wpanctl scan -c 25
+  561  sudo shutdown -h now
+  562  sudo sh M2Tester.sh 
+  563  wpanct
+  564  wpanctl scan -c 25
+  565  sudo shutdown -h now
+  566  sudo sh M2Tester.sh 
+  567  wpanctl scan -c 25
+  568  sudo shutdown -h now
+  569  sudo sh M2Tester.sh 
+  570  wpanctl scan -c 25
+  571  sudo shutdown -h now
+  572  crontab -e
+  573  sudo sh M2Tester.sh 
+  574  wpanctl scan -c 25
+  575  sudo shutdown -h now
+  576  wpanctl scan -c 25
+  577  sudo shutdown -h now
+  578  wpanctl scan -c 25
+  579  crontab -e
+  580  sudo shutdown -h now
+  581  crontab -e
+  582  sudo reboot
+  583  wpanctl scan -c 25
+  584  sudo reboot
+  585  wpanctl scan -c 25
+  586  sudo shutdown -h now
+  587  wpanctl scan -c 25
+  588  sudo shutdown -h now
+  589  wpanctl scan -c 25
+  590  sudo shutdown -h now
+  591  wpanctl scan -c 25
+  592  sudo shutdown -h now
+  593  wpanctl scan -c 25
+  594  sudo reboot
+  595  wpanctl scan -c 25
+  596  sudo shutdown -h now
+  597  wpanctl scan -c 25
+  598  sudo shutdown -h now
+  599  wpanctl scan -c 25
+  600  sudo shutdown -h now
+  601  wpanctl scan -c 25
+  602  sudo shutdown -h now
+  603  wpanctl scan -c 25
+  604  sudo shutdown -h now
+  605  wpanctl scan -c 25
+  606  sudo shutdown -h now
+  607  wpanctl scan -c 25
+  608  sudo shutdown -h now
+  609  wpanctl scan -c 25
+  610  sudo shutdown -h now
+  611  wpanctl scan -c 25
+  612  sudo shutdown -h now
+  613  wpanctl scan -c 25
+  614  sudo shutdown -h now
+  615  wpanctl scan -c 25
+  616  sudo shutdown -h now
+  617  wpanctl scan -c 25
+  618  sudo shutdown -h now
+  619  wpanctl scan -c 25
+  620  sudo shutdown -h now
+  621  wpanctl scan -c 25
+  622  sudo shutdown -h now
+  623  wpanctl scan -c 25
+  624  sudo shutdown -h now
+  625  panctl scan -c 25
+  626  sudo sh M2Tester.sh 
+  627  wpanctl scan -c 25
+  628  sudo reboot
+  629  wpanctl scan -c 25
+  630  sudo reboot
+  631  wpanctl scan -c 25
+  632  sudo shutdown -h now
+  633  wpanctl scan -c 25
+  634  sudo shutdown -h now
+  635  wpanctl scan -c 25
+  636  sudo shutdown -h now
+  637  touch crontab
+  638  sudo nano crontab
+  639  ls
+  640  history > save.txt

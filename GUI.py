@@ -27,7 +27,7 @@ class Application(Frame):
                 """
                 self.master=master
                 self.master.title("Tag Tester")
-                self.master.geometry("480x490")
+                self.master.geometry("480x650")
                 
                 self.vbatt=StringVar()
                 self.vmcu=StringVar()
@@ -42,7 +42,8 @@ class Application(Frame):
                 self.reset_time=StringVar()
                 self.vbatt2=StringVar()
                 self.cnew=StringVar() 
-                self.cprog=StringVar()
+                self.cprogmin=StringVar()
+                self.cprogmax=StringVar()
                 self.ccharge=StringVar()
                 self.vcoil=StringVar()
                 
@@ -59,33 +60,62 @@ class Application(Frame):
                 self.vcoil.set("0 V")
                 self.vbatt2.set("0 V")
                 self.cnew.set("0 mA")
-                self.cprog.set("0 mA")
+                self.cprogmin.set("0 mA")
+                self.cprogmax.set("0 mA")
                 self.ccharge.set("0 mA")
                
                                 
                 self.currentAction.set("Press Start Test to begin")              
-        
-                x=1
-                y=0
-                self.b1=Button(self.master,  text="Start Test", command=self.startTest)
-                self.b1.grid(row=y, column=x, pady=5)
                 
+                
+                #Serial number entry
                 x=0
-                y=1             
+                y=0            
                 self.el1=Label(self.master, text="Serial Number")
                 self.el1.grid(row=y, column=x,pady=5)
-                
+                                
                 x=1
                 self.e1=Entry(self.master)
                 self.e1.grid(row=y, column=x)
                 
-                tabley=3
+                
+               
+                
+                ##########################################################################################
+                #read current button
+                x=1
+                y=1                
+                self.b1=Button(self.master,  text="Read initial current", command=self.readcurrent)
+                #self.b1=Button(self.master,  text="Read initial current", command=self.read_samplecurrent)
+                self.b1.grid(row=y, column=x, pady=10)
                 
                 
+                #current reading display
                 x=0
                 y=2
+                self.l13x=Label(self.master, text="Current new")
+                self.l13x.grid(row=y, column=x)
+                
+                x=1
+                self.ll13x=Label(self.master, text=" ")
+                self.ll13x.grid(row=y, column=x)
+                
+                x=2                
+                self.lll13x=Label(self.master, textvariable=self.cnew)
+                self.lll13x.grid(row=y, column=x)
+                
+                #start test button
+                x=1
+                y=3
+                self.b1=Button(self.master,  text="Start Test", command=self.startTest)
+                self.b1.grid(row=y, column=x, pady=5)
+                                
+                x=0
+                y=4
                 self.d1=Label(self.master, textvariable=self.currentAction)
-                self.d1.grid(row=y, column=x, columnspan=4, pady=8)
+                self.d1.grid(row=y, column=x, columnspan=4, pady=5)
+                
+                tabley=5
                                 
                 #First column
                 self.l0=Label(self.master, text="SIGNAL")
@@ -100,10 +130,9 @@ class Application(Frame):
                 self.l9=Label(self.master, text="PA4 bleeding high")
                 self.l10=Label(self.master, text="Reset timing")
                 self.l11=Label(self.master, text="Vcoil")
-                self.l12=Label(self.master, text="Charging Voltage")
-                
-                self.l13=Label(self.master, text="Current new")
-                self.l14=Label(self.master, text="Current programmed")
+                self.l12=Label(self.master, text="Charging Voltage")                
+                self.l13=Label(self.master, text="Current prog min")
+                self.l14=Label(self.master, text="Current prog max")
                 self.l15=Label(self.master, text="Current charging")
                 
                 x=0
@@ -132,7 +161,7 @@ class Application(Frame):
                 y+=1
                 self.l11.grid(row=y, column=x)                
                 y+=1
-                self.l12.grid(row=y, column=x)
+                self.l12.grid(row=y, column=x)                
                 y+=1
                 self.l13.grid(row=y, column=x)
                 y+=1
@@ -155,7 +184,7 @@ class Application(Frame):
                 self.ll11=Label(self.master, text="4.9-5.1 V")
                 self.ll12=Label(self.master, text="4.0-4.2 V")
         
-                self.ll13=Label(self.master, text=" ")#placeholders
+                self.ll13=Label(self.master, text=" ")
                 self.ll14=Label(self.master, text=" ")
                 self.ll15=Label(self.master, text=" ")
                 
@@ -185,15 +214,15 @@ class Application(Frame):
                 y+=1
                 self.ll11.grid(row=y, column=x)                
                 y+=1
-                self.ll12.grid(row=y, column=x)   
-                             
+                self.ll12.grid(row=y, column=x)                                
+                
                 y+=1
                 self.ll13.grid(row=y, column=x)
                 y+=1
                 self.ll14.grid(row=y, column=x)
                 y+=1
-                self.ll15.grid(row=y, column=x)
-                
+                self.ll15.grid(row=y, column=x)    
+                            
                 
                 #Third column
                 self.lll0=Label(self.master, text="Actual Value")
@@ -210,8 +239,9 @@ class Application(Frame):
                 self.lll11=Label(self.master, textvariable=self.vcoil)
                 self.lll12=Label(self.master, textvariable=self.vbatt2)  
                 
-                self.lll13=Label(self.master, textvariable=self.cnew) 
-                self.lll14=Label(self.master, textvariable=self.cprog) 
+                 
+                self.lll13=Label(self.master, textvariable=self.cprogmin) 
+                self.lll14=Label(self.master, textvariable=self.cprogmax) 
                 self.lll15=Label(self.master, textvariable=self.ccharge) 
                 
                 x=2
@@ -241,13 +271,13 @@ class Application(Frame):
                 self.lll11.grid(row=y, column=x)                
                 y+=1
                 self.lll12.grid(row=y, column=x)                
+                
                 y+=1
                 self.lll13.grid(row=y, column=x)
                 y+=1
                 self.lll14.grid(row=y, column=x)
                 y+=1
-                self.lll15.grid(row=y, column=x)
-                
+                self.lll15.grid(row=y, column=x)                
                 
                 #Fourth column
                 self.llll0=Label(self.master, text="Pass / Fail")
@@ -295,17 +325,227 @@ class Application(Frame):
                 
                 y+=6           
                 self.exit=Button(self.master,  text="Exit",command=self.master.destroy)#.pack(side="top",pady=40)               
-                self.exit.grid(row=y, column=1,pady=10)
+                self.exit.grid(row=y, column=1,pady=5)
                 
                 
                        
                                  
 
 
+        #read current before board is programmed
+        def readcurrent(self):
+                
+                serial_number=self.e1.get()
+                
+                #toggle wireless charger and connect batt
+                relaywirelesscharge = 24
+                relaybatt = 23
+                GPIO.setmode(GPIO.BCM)             
+                GPIO.setup(relaywirelesscharge, GPIO.OUT)  
+                GPIO.setup(relaybatt          , GPIO.OUT)  
+                
+                GPIO.output(relaybatt          , GPIO.HIGH) #battery
+                GPIO.output(relaywirelesscharge, GPIO.HIGH) #wireless charger
+                time.sleep(2)
+                GPIO.output(relaywirelesscharge, GPIO.LOW)   
+                time.sleep(2)             
+                
+                
+                test_Report=open(str(os.path.dirname(__file__))+"/test reports/"+serial_number+".txt","a")
+                test_Report.write("Tag Initial Current Reading\n")
+                test_Report.write("Serial Number:\t\t"+str(serial_number)+"\n")
+                test_Report.write("Time:\t\t\t"+str(time.asctime())+"\n")
+                
+                initialcurrent = currentsense.currentRead()
+                initialcurrent = '{:.2f}'.format(initialcurrent.currentReading())+" mA"
+                print(initialcurrent)
+                self.cnew.set(initialcurrent)                
+                test_Report.write("Initial Current:\t"+str(initialcurrent))                
+                test_Report.write("\n\n\n")
+                
+                test_Report.close()
+            
+            
+            
+        def read_samplecurrent(self):
+
+                """
+
+                Sample current of a channel 0.05s interval for 2 seconds.
+                
+                Stop if 10 samples fall within low and high values.
+                Sort in ascending order and send 4th value in list.
         
+                """
 
+                sampletime=0.05
+                samplecount=40
+                                
+                try:
+                        listofSamples=[]
+                        oldtime=time.time()
+                            
+                        count=0
+                        initialcurrent = currentsense.currentRead()
+                        while count<samplecount :
+                                count+=1                                
+                                current = '{:.2f}'.format(initialcurrent.currentReading())#+" mA"
+                                listofSamples.append(current)
+                                time.sleep(sampletime)                             
+                                                        
+                        #print(time.time()-oldtime) #for debug
+                        if(len(listofSamples)>=10):
+                                listofSamples.sort()
+                                print(listofSamples)
+                                print("success")
+                                self.cprogmin.set(str(listofSamples[8])+ "mA")
+                                self.cprogmax.set(str(listofSamples[32])+ "mA")
+                        else:
+                                print("not success")
+                except:
+                        pass
 
+                
+        def reset_sense(self):
+                
+                """
+
+                To detect a 5ms low pulse when wireless charger is powered on by relay.
+                Function will record time, detect LOW, and find the difference in time
+                when signal becomes HIGH again.
+                timeout from main function can stop function by changing self.stopthread to True.
+        
+                """
+
+                
+                GPIO.output(24, GPIO.HIGH)  #power to wireless charger
+                
+                while GPIO.input(27)==True :
+                        if self.stopthread:
+                                print("not detected 1")
+                                break
                         
+                oldtime=time.time()
+                while GPIO.input(27)==False :
+                        if self.stopthread:
+                                print("not detected 2")
+                                break
+                        
+                if self.stopthread==False:        
+                        self.timetaken=round((time.time()-oldtime)*1000,2)
+                print(self.timetaken)
+                
+                
+
+
+
+                
+                
+                
+        def read_ADC(self):
+
+
+                """
+
+                To read all ADC channels and return values in a 8 value array.
+        
+                """
+                
+                try:
+                        ADC = ADS1256.ADS1256()                 
+                        if (ADC.ADS1256_init() == -1):
+                                pass
+                         
+                        else:        
+                                ADC_read=ADC.ADS1256_GetAll()
+                                count=0
+                                for x in ADC_read:                                      
+                                        ADC_read[count]=round(ADC_read[count]*5.0/0x7fffff,2)
+                                        count=count+1 
+                                return ADC_read
+                                
+                except:
+                        GPIO.cleanup()
+                        print ("\r\nProgram end     ")
+                        
+                        
+        def read_singleADC(self,port):
+                
+                """
+
+                To read a single ADC channels and return the value.
+        
+                """
+
+                try:
+                        ADC = ADS1256.ADS1256()
+                        print(time.asctime())
+                        return round(ADC.ADS1256_GetChannalValue(port)*5.0/0x7fffff,2)
+                        
+                except:
+                        GPIO.cleanup()
+                        print ("\r\nProgram end     ")          
+                        
+                        
+
+                                    
+        def read_sampleADC(self , port, low , high ):
+
+                """
+
+                Sample an ADC channel 0.1s interval for 3 seconds.
+                Stop if 10 samples fall within low and high values.
+                Sort in ascending order and send 4th value in list.
+        
+                """
+
+                sampletime=0.1
+                samplecount=30
+                
+                
+                try:
+                        listofSamples=[]
+                        oldtime=time.time()
+                        
+                        low=float(low)
+                        high=float(high)                        
+                                                        
+                        ADC = ADS1256.ADS1256()
+                        print("reading samples on port "+str(port))
+        
+                        count=0
+                        while count<samplecount and len(listofSamples) < 10:
+                                count+=1
+                                reading=round(ADC.ADS1256_GetChannalValue(port)*5.0/0x7fffff,2)
+                
+                                if reading>=low and reading<=high:                
+                                    listofSamples.append(reading)
+                                time.sleep(sampletime)
+                                
+                        
+                        print(count)
+                        print(listofSamples)
+                                         
+                        print(time.time()-oldtime)
+                        if(len(listofSamples)>=10):
+                                listofSamples.sort()
+                                print("success")
+                                return listofSamples[4],1
+                        else:
+                                print("not success")
+                                return round(ADC.ADS1256_GetChannalValue(port)*5.0/0x7fffff,2),0
+                 
+                        
+                                
+                        
+                except:
+                        GPIO.cleanup()
+                        print ("\r\nERROR IN READ  ")                
+           
+           
+           
+        
+                       
                         
                         
         def startTest(self):
@@ -337,10 +577,10 @@ class Application(Frame):
                 relaywirelesscharge = 24
                 relaybatt = 23
                 GPIO.setmode(GPIO.BCM)
-                GPIO.setup(27, GPIO.IN) #sense reset                
-                GPIO.setup(24, GPIO.OUT) #relay
-                GPIO.setup(23, GPIO.OUT) #Vin to power tag
-                
+                GPIO.setup(relaywirelesscharge, GPIO.OUT)  
+                GPIO.setup(relaybatt          , GPIO.OUT) 
+                GPIO.setup(resetsense          , GPIO.IN) 
+                                
                 GPIO.output(relaywirelesscharge, GPIO.LOW)  
                 GPIO.output(relaybatt          , GPIO.LOW)
                                 
@@ -368,8 +608,8 @@ class Application(Frame):
                 self.reset_time.set("0 mS")
                 self.vbatt2.set("0 V")
                 
-                self.cnew.set("0 mA")
-                self.cprog.set("0 mA")
+                self.cprogmin.set("0 mA")
+                self.cprogmax.set("0 mA")
                 self.ccharge.set("0 mA")
                 
                 self.llll1.config(bg="white")
@@ -414,12 +654,11 @@ class Application(Frame):
                         test_Report.write("fail\n")
                 self.master.update()
                 
-                self.currentAction.set("Reading Current")  
-                currentread = currentsense.currentRead()
-                print('{:.2f}'.format(currentread.currentReading())+" mA")
-                self.cprog.set('{:.2f}'.format(currentread.currentReading())+" mA")
-                              
-               
+                #!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+                print("sample current for min max")
+                self.read_samplecurrent()
+                           
+                
                 
                 #Vmcu 
                 ADC_values[2] , testpass =self.read_sampleADC(2 , 3.2 , 3.4)
@@ -614,8 +853,7 @@ class Application(Frame):
                         self.llll10.config(bg="red")     
                         test_Report.write("fail\n") 
                 
-
-                #GPIO.output(relaybatt, GPIO.LOW)
+ 
                 time.sleep(1)
                 
                 #Vcoil
@@ -639,10 +877,12 @@ class Application(Frame):
                 time.sleep(2)
                 
                 #read batt current with charger on
-                self.currentAction.set("Reading Current")  
-                currentread = currentsense.currentRead()
-                print('{:.2f}'.format(currentread.currentReading())+" mA")
-                self.ccharge.set('{:.2f}'.format(currentread.currentReading())+" mA")
+                self.currentAction.set("Reading Current")                               
+                chargecurrent = currentsense.currentRead()
+                chargecurrent= '{:.2f}'.format(chargecurrent.currentReading())+" mA"
+                print(chargecurrent)
+                self.ccharge.set(chargecurrent)                
+                
                 
                 time.sleep(1)
                 #turn off batt
@@ -666,9 +906,17 @@ class Application(Frame):
                         self.llll12.config(bg="red")     
                         test_Report.write("fail\n")
                 
-                    
-      
                 self.currentAction.set("Test Complete")
+                    
+                test_Report.write("Charging Current:\t"+str(chargecurrent))                
+                test_Report.write("\n")
+                test_Report.write("Charg Prog Minimum:\t"+str(self.cprogmin.get()))                
+                test_Report.write("\n")
+                test_Report.write("Charg Prog Maximum:\t"+str(self.cprogmax.get()))                
+                test_Report.write("\n")
+                print(self.cprogmin.get())
+                print(self.cprogmax.get())
+                print("test report close")
                 
                 test_Report.write("\n\n\n\n")
                 test_Report.close()
@@ -677,143 +925,3 @@ class Application(Frame):
                 GPIO.output(relaybatt          , GPIO.LOW)
                 GPIO.cleanup()
 
-                
-        def reset_sense(self):
-                
-                """
-
-                To detect a 5ms low pulse when wireless charger is powered on by relay.
-                Function will record time, detect LOW, and find the difference in time
-                when signal becomes HIGH again.
-                timeout from main function can stop function by changing self.stopthread to True.
-        
-                """
-
-                
-                GPIO.output(24, GPIO.HIGH)  #power to wireless charger
-                
-                while GPIO.input(27)==True :
-                        if self.stopthread:
-                                print("not detected 1")
-                                break
-                        
-                oldtime=time.time()
-                while GPIO.input(27)==False :
-                        if self.stopthread:
-                                print("not detected 2")
-                                break
-                        
-                if self.stopthread==False:        
-                        self.timetaken=round((time.time()-oldtime)*1000,2)
-                print(self.timetaken)
-                
-                
-
-
-
-                
-                
-                
-        def read_ADC(self):
-
-
-                """
-
-                To read all ADC channels and return values in a 8 value array.
-        
-                """
-                
-                try:
-                        ADC = ADS1256.ADS1256()                 
-                        if (ADC.ADS1256_init() == -1):
-                                pass
-                         
-                        else:        
-                                ADC_read=ADC.ADS1256_GetAll()
-                                count=0
-                                for x in ADC_read:                                      
-                                        ADC_read[count]=round(ADC_read[count]*5.0/0x7fffff,2)
-                                        count=count+1 
-                                return ADC_read
-                                
-                except:
-                        GPIO.cleanup()
-                        print ("\r\nProgram end     ")
-                        
-                        
-        def read_singleADC(self,port):
-                
-                """
-
-                To read a single ADC channels and return the value.
-        
-                """
-
-                try:
-                        ADC = ADS1256.ADS1256()
-                        print(time.asctime())
-                        return round(ADC.ADS1256_GetChannalValue(port)*5.0/0x7fffff,2)
-                        
-                except:
-                        GPIO.cleanup()
-                        print ("\r\nProgram end     ")          
-                        
-                        
-                        
-        def read_sampleADC(self , port, low , high ):
-
-                """
-
-                Sample an ADC channel 0.1s interval for 3 seconds.
-                Stop if 10 samples fall within low and high values.
-                Sort in ascending order and send 4th value in list.
-        
-                """
-
-                sampletime=0.1
-                samplecount=30
-                
-                
-                try:
-                        listofSamples=[]
-                        oldtime=time.time()
-                        
-                        low=float(low)
-                        high=float(high)                        
-                                                        
-                        ADC = ADS1256.ADS1256()
-                        print("reading samples on port "+str(port))
-        
-                        count=0
-                        while count<samplecount and len(listofSamples) < 10:
-                                count+=1
-                                reading=round(ADC.ADS1256_GetChannalValue(port)*5.0/0x7fffff,2)
-                
-                                if reading>=low and reading<=high:                
-                                    listofSamples.append(reading)
-                                time.sleep(sampletime)
-                                
-                        
-                        print(count)
-                        print(listofSamples)
-                                         
-                        print(time.time()-oldtime)
-                        if(len(listofSamples)>=10):
-                                listofSamples.sort()
-                                print("success")
-                                return listofSamples[4],1
-                        else:
-                                print("not success")
-                                return round(ADC.ADS1256_GetChannalValue(port)*5.0/0x7fffff,2),0
-                 
-                        
-                                
-                        
-                except:
-                        GPIO.cleanup()
-                        print ("\r\nERROR IN READ  ")                
-           
-                
-
-                        
-                

@@ -1,0 +1,18 @@
+vbatt 		AD0  
+vcoil 		AD1            
+vmcu 		AD2
+vreg		AD3
+led			AD4
+vbatt		AD5
+bleeding	AD6   
+               
+
+GPIO
+reset_time	GPIO27
+RelayCharge	GPIO23 ,5V, Gnd
+RelayVbatt	GPIO24 ,5V, Gnd
+
+Current Mod	GPIO2 SDA, GPIO3 SCL
+
+
+                

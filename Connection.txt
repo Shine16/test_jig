@@ -16,3 +16,12 @@ Current Mod	GPIO2 SDA, GPIO3 SCL
 
 
                 
+
+
+
+1k ohm resistor at led AD4 to gnd as pulldown, helped voltage to pull to 0
+led and vmcu issue attributed to batt not able to power led and bleeding circuit.
+
+
+
+

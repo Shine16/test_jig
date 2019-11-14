@@ -328,6 +328,15 @@ class Application(Frame):
                 self.exit.grid(row=y, column=1,pady=5)
                 
                 
+                self.ADC = ADS1256.ADS1256()
+                self.ADC.ADS1256_init()
+                                
+                                
+                self.relaywirelesscharge = 24
+                self.relaybatt = 23
+                self.reset=27
+                
+ 
                        
                                  
 
@@ -337,17 +346,22 @@ class Application(Frame):
                 
                 serial_number=self.e1.get()
                 
+                try:
+                        #GPIO.cleanup
+                        GPIO.setmode(GPIO.BCM)             
+                        GPIO.setup(self.relaywirelesscharge, GPIO.OUT)  
+                        GPIO.setup(self.relaybatt          , GPIO.OUT)  
+                        GPIO.setup(self.reset              , GPIO.IN)
+                        GPIO.output(self.relaywirelesscharge, GPIO.LOW) 
+                        GPIO.output(self.relaybatt          , GPIO.LOW) 
+                except:
+                        print("not able to initialize GPIO")
+                        
                 #toggle wireless charger and connect batt
-                relaywirelesscharge = 24
-                relaybatt = 23
-                GPIO.setmode(GPIO.BCM)             
-                GPIO.setup(relaywirelesscharge, GPIO.OUT)  
-                GPIO.setup(relaybatt          , GPIO.OUT)  
-                
-                GPIO.output(relaybatt          , GPIO.HIGH) #battery
-                GPIO.output(relaywirelesscharge, GPIO.HIGH) #wireless charger
+                GPIO.output(self.relaybatt          , GPIO.HIGH) #battery
+                GPIO.output(self.relaywirelesscharge, GPIO.HIGH) #wireless charger
                 time.sleep(2)
-                GPIO.output(relaywirelesscharge, GPIO.LOW)   
+                GPIO.output(self.relaywirelesscharge, GPIO.LOW)   
                 time.sleep(2)             
                 
                 
@@ -364,6 +378,7 @@ class Application(Frame):
                 test_Report.write("\n\n\n")
                 
                 test_Report.close()
+                GPIO.cleanup
             
             
             
@@ -418,22 +433,25 @@ class Application(Frame):
                 """
 
                 
-                GPIO.output(24, GPIO.HIGH)  #power to wireless charger
+                GPIO.output(self.relaywirelesscharge, GPIO.HIGH)  #power to wireless charger
+                GPIO.output(self.relaywirelesscharge, GPIO.LOW)
+                time.sleep(1)
+                GPIO.output(self.relaywirelesscharge, GPIO.HIGH)
                 
-                while GPIO.input(27)==True :
+                while GPIO.input(self.reset)==True :
                         if self.stopthread:
                                 print("not detected 1")
                                 break
                         
                 oldtime=time.time()
-                while GPIO.input(27)==False :
+                while GPIO.input(self.reset)==False :
                         if self.stopthread:
                                 print("not detected 2")
                                 break
                         
                 if self.stopthread==False:        
                         self.timetaken=round((time.time()-oldtime)*1000,2)
-                print(self.timetaken)
+                print("time taken: "+str(self.timetaken))
                 
                 
 
@@ -452,20 +470,16 @@ class Application(Frame):
                 """
                 
                 try:
-                        ADC = ADS1256.ADS1256()                 
-                        if (ADC.ADS1256_init() == -1):
-                                pass
-                         
-                        else:        
-                                ADC_read=ADC.ADS1256_GetAll()
-                                count=0
-                                for x in ADC_read:                                      
-                                        ADC_read[count]=round(ADC_read[count]*5.0/0x7fffff,2)
-                                        count=count+1 
-                                return ADC_read
+              
+                        ADC_read=self.ADC.ADS1256_GetAll()
+                        count=0
+                        for x in ADC_read:                                      
+                                ADC_read[count]=round(ADC_read[count]*5.0/0x7fffff,2)
+                                count=count+1 
+                        return ADC_read
                                 
                 except:
-                        GPIO.cleanup()
+                        
                         print ("\r\nProgram end     ")
                         
                         
@@ -478,12 +492,12 @@ class Application(Frame):
                 """
 
                 try:
-                        ADC = ADS1256.ADS1256()
+
                         print(time.asctime())
-                        return round(ADC.ADS1256_GetChannalValue(port)*5.0/0x7fffff,2)
+                        return round(self.ADC.ADS1256_GetChannalValue(port)*5.0/0x7fffff,2)
                         
                 except:
-                        GPIO.cleanup()
+                        
                         print ("\r\nProgram end     ")          
                         
                         
@@ -498,33 +512,37 @@ class Application(Frame):
                 Sort in ascending order and send 4th value in list.
         
                 """
-
+                print("\nSampling ADC ")
                 sampletime=0.1
-                samplecount=30
+                samplecount=50
                 
                 
                 try:
                         listofSamples=[]
+                        saveSamples=[]#only used in debug
                         oldtime=time.time()
                         
                         low=float(low)
-                        high=float(high)                        
-                                                        
-                        ADC = ADS1256.ADS1256()
+                        high=float(high)
+                        print("low values: "+str(low))
+                        print("high value: "+str(high))
+                                                
                         print("reading samples on port "+str(port))
         
                         count=0
                         while count<samplecount and len(listofSamples) < 10:
                                 count+=1
-                                reading=round(ADC.ADS1256_GetChannalValue(port)*5.0/0x7fffff,2)
+                                reading=round(self.ADC.ADS1256_GetChannalValue(port)*5.0/0x7fffff,2)
+                                saveSamples.append(reading)
+                                print(reading)
                 
                                 if reading>=low and reading<=high:                
                                     listofSamples.append(reading)
                                 time.sleep(sampletime)
                                 
-                        
-                        print(count)
-                        print(listofSamples)
+                        print("saved samples: "+str(saveSamples))
+                        print("count: "+str(count))
+                        print("list of samples: "+str(listofSamples))
                                          
                         print(time.time()-oldtime)
                         if(len(listofSamples)>=10):
@@ -533,14 +551,26 @@ class Application(Frame):
                                 return listofSamples[4],1
                         else:
                                 print("not success")
-                                return round(ADC.ADS1256_GetChannalValue(port)*5.0/0x7fffff,2),0
+                                return round(self.ADC.ADS1256_GetChannalValue(port)*5.0/0x7fffff,2),0
                  
                         
                                 
                         
                 except:
-                        GPIO.cleanup()
-                        print ("\r\nERROR IN READ  ")                
+                        
+                        print ("\r\nERROR IN READ  ")  
+                        return 0,1
+                        
+                              
+        def readoutADCValues(self, port, numOfTimes):
+                
+                print("\nreading out values")
+                for x in range(numOfTimes):
+
+                        reading=round(self.ADC.ADS1256_GetChannalValue(port)*5.0/0x7fffff,2)
+                        print(reading)
+                        time.sleep(0.1)
+                        
            
            
            
@@ -566,23 +596,17 @@ class Application(Frame):
                 and GPIO27
         
                 """
-                
+ 
+
+                       
+                                      
                 #make test report directory if not exist
                 try:
                         os.mkdir('test reports')
                 except FileExistsError:
                         pass
                 
-                resetsense=27
-                relaywirelesscharge = 24
-                relaybatt = 23
-                GPIO.setmode(GPIO.BCM)
-                GPIO.setup(relaywirelesscharge, GPIO.OUT)  
-                GPIO.setup(relaybatt          , GPIO.OUT) 
-                GPIO.setup(resetsense          , GPIO.IN) 
-                                
-                GPIO.output(relaywirelesscharge, GPIO.LOW)  
-                GPIO.output(relaybatt          , GPIO.LOW)
+      
                                 
                 serial_number=self.e1.get()
 
@@ -624,25 +648,43 @@ class Application(Frame):
                 self.llll10.config(bg="white")
                 self.llll11.config(bg="white")
                 self.llll12.config(bg="white")
-                                
-                GPIO.output(relaybatt          , GPIO.HIGH) #battery
-                GPIO.output(relaywirelesscharge, GPIO.HIGH) #wireless charger
+                 
+
+                 
+                try:
+                        #GPIO.cleanup
+                        GPIO.setmode(GPIO.BCM)             
+                        GPIO.setup(self.relaywirelesscharge, GPIO.OUT)  
+                        GPIO.setup(self.relaybatt          , GPIO.OUT)  
+                        GPIO.setup(self.reset              , GPIO.IN)
+                        GPIO.output(self.relaywirelesscharge, GPIO.LOW) 
+                        GPIO.output(self.relaybatt          , GPIO.LOW) 
+                except:
+                        print("not able to initialize GPIO")
+                                        
+                GPIO.output(self.relaywirelesscharge, GPIO.LOW)  
+                GPIO.output(self.relaybatt          , GPIO.LOW)                
+                                               
+                GPIO.output(self.relaybatt          , GPIO.HIGH) #battery
+                GPIO.output(self.relaywirelesscharge, GPIO.HIGH) #wireless charger
                 time.sleep(2)
-                GPIO.output(relaywirelesscharge, GPIO.LOW)
+                GPIO.output(self.relaywirelesscharge, GPIO.LOW)
                 self.currentAction.set("Reading Values")
                 self.master.update()
                 time.sleep(3)
                                 
                 ADC_values=self.read_ADC()
-                
+                ADC_value=0
                         
                 self.currentAction.set("Reading Vbatt")  
+                
                         
                 
                 
                 #Vbatt
-                ADC_values[0] , testpass =self.read_sampleADC(0 , 3 , 4.2)
-                vbattf='{:.2f}'.format(ADC_values[0])
+                print("\nReading Vbatt on A0")
+                ADC_value , testpass =self.read_sampleADC(0 , 3 , 4.2)
+                vbattf='{:.2f}'.format(ADC_value)
                 self.vbatt.set(vbattf+" V")   
                 
                 test_Report.write("Vbatt:\t\t\t"+vbattf+" V\t")
@@ -657,12 +699,17 @@ class Application(Frame):
                 #!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
                 print("sample current for min max")
                 self.read_samplecurrent()
+                
+                
+                
+                GPIO.output(self.relaywirelesscharge, GPIO.HIGH) #wireless charger
                            
                 
                 
                 #Vmcu 
-                ADC_values[2] , testpass =self.read_sampleADC(2 , 3.2 , 3.4)
-                vmcuf='{:.2f}'.format(ADC_values[2])
+                print("\nReading Vmcu on A2")
+                ADC_value , testpass =self.read_sampleADC(2 , 3.2 , 3.4)
+                vmcuf='{:.2f}'.format(ADC_value)
                 self.vmcu.set(vmcuf+" V")
                 
                 test_Report.write("Vmcu:\t\t\t"+vmcuf+" V\t")
@@ -672,11 +719,13 @@ class Application(Frame):
                 else:
                         self.llll2.config(bg="red")     
                         test_Report.write("fail\n")
-                self.master.update()
+                
+                
                 
                 #Vreg 
-                ADC_values[3] , testpass =self.read_sampleADC(3 , 1.7 , 1.9)
-                vregf='{:.2f}'.format(ADC_values[3])
+                print("\nReading Vreg on A3")
+                ADC_value , testpass =self.read_sampleADC(3 , 1.7 , 1.9)
+                vregf='{:.2f}'.format(ADC_value)
                 self.vreg.set(vregf+" V")
                 
                 test_Report.write("Vreg:\t\t\t"+vregf+" V\t")
@@ -688,7 +737,7 @@ class Application(Frame):
                 else:
                         self.llll3.config(bg="red")     
                         test_Report.write("fail\n")
-                self.master.update()
+               
         
 
                 ################# Sample on ports 3-6 ########################
@@ -697,14 +746,15 @@ class Application(Frame):
                 
                 
                 
+              
                 
-                
-                #PF6 LED low    
+                #PF6 LED low  
+                print("\nReading LED Low on A4") 
                 self.currentAction.set("Reading PF6 LED low")
                 self.master.update()
 
-                ADC_values[4] , testpass =self.read_sampleADC(4, 0 , 0.5)#sport,low,high range 
-                ledlf = '{:.2f}'.format(ADC_values[4])
+                ADC_value , testpass =self.read_sampleADC(4, 0 , 0.5)#sport,low,high range 
+                ledlf = '{:.2f}'.format(ADC_value)
                 
                 test_Report.write("PF6 LED Low:\t\t"+ledlf+" V\t")                
                 self.led_low.set(ledlf+" V")
@@ -714,18 +764,19 @@ class Application(Frame):
                         test_Report.write("pass\n")
                 else:
                         self.llll4.config(bg="red")
-                        test_Report.write("fail\n") 
-                
-                self.master.update()
+                        test_Report.write("fail\n")                 
+          
 
 
+                #self.readoutADCValues(4,50)
                         
                 #PF6 LED high
+                print("\nReading LED High on A4") 
                 self.currentAction.set("Reading PF6 LED high")
                 self.master.update()
 
-                ADC_values[4] , testpass =self.read_sampleADC(4, 2.7 , 5.1 )
-                ledhf= '{:.2f}'.format(ADC_values[4])
+                ADC_value , testpass =self.read_sampleADC(4, 2.4 , 5.1 )
+                ledhf= '{:.2f}'.format(ADC_value)
                 
                 test_Report.write("PF6 LED High:\t\t"+ledhf+" V\t")                
                 self.led_high.set(ledhf+" V")
@@ -736,15 +787,20 @@ class Application(Frame):
                 else:
                         self.llll5.config(bg="red")     
                         test_Report.write("fail\n")
+           
                  
+                 
+                 
+                   
                         
                         
                 #PC10 vbatt sense low
+                print("\nReading Vbatt Sense Low on A5") 
                 self.currentAction.set("Reading PC10 vbatt sense LOW")
                 self.master.update()
                 
-                ADC_values[5] , testpass =self.read_sampleADC(5, 0 , 0.5 ) 
-                vbattSenself = '{:.2f}'.format(ADC_values[5])
+                ADC_value , testpass =self.read_sampleADC(5, 0 , 0.5 ) 
+                vbattSenself = '{:.2f}'.format(ADC_value)
                 
                 test_Report.write("PC10 vbatt sense low:\t"+vbattSenself+" V\t")                 
                 self.vbatt_sense_low.set(vbattSenself+" V")                       
@@ -755,14 +811,16 @@ class Application(Frame):
                 else:
                         self.llll6.config(bg="red")                     
                         test_Report.write("fail\n")
+    
 
                         
                 #PC10 vbatt sense high  
+                print("\nReading Vbatt Sense High on A5") 
                 self.currentAction.set("Reading PC10 vbatt sense HIGH")
                 self.master.update()
                 
-                ADC_values[5] , testpass =self.read_sampleADC(5, 2.7 , 5.1 )
-                vbattSensehf = '{:.2f}'.format(ADC_values[5])
+                ADC_value , testpass =self.read_sampleADC(5, 2.7 , 5.1 )
+                vbattSensehf = '{:.2f}'.format(ADC_value)
 				
                 test_Report.write("PC10 vbatt sense high:\t"+vbattSensehf+" V\t") 
                 self.vbatt_sense_high.set(vbattSensehf+" V")
@@ -773,14 +831,16 @@ class Application(Frame):
                 else:
                         self.llll7.config(bg="red")     
                         test_Report.write("fail\n")
+       
                 
                         
                 #PA4 bleeding low
+                print("\nReading Bleeding Low on A6") 
                 self.currentAction.set("Reading PA4 bleeding LOW")
                 self.master.update()
                 
-                ADC_values[6],testpass=self.read_sampleADC(6, 0 , 0.5 )
-                bleedlf ='{:.2f}'.format(ADC_values[6])
+                ADC_value,testpass=self.read_sampleADC(6, 0 , 0.5 )
+                bleedlf ='{:.2f}'.format(ADC_value)
                 
                 test_Report.write("PA4 bleeding low:\t"+bleedlf+" V\t") 
                 self.bleeding_low.set(bleedlf+" V")
@@ -791,14 +851,16 @@ class Application(Frame):
                 else:
                         self.llll8.config(bg="red")
                         test_Report.write("fail\n")
+      
                  
                         
                 #PA4 bleeding high 
+                print("\nReading Bleeding High on A6") 
                 self.currentAction.set("Reading PA4 bleeding HIGH")
                 self.master.update()
                 
-                ADC_values[6],testpass=self.read_sampleADC(6, 2.7 , 5.1 )
-                bleedhf ='{:.2f}'.format(ADC_values[6])
+                ADC_value,testpass=self.read_sampleADC(6, 2.7 , 5.1 )
+                bleedhf ='{:.2f}'.format(ADC_value)
                 
                 test_Report.write("PA4 bleeding high:\t"+bleedhf+" V\t")             
                 self.bleeding_high.set(bleedhf+" V")
@@ -810,6 +872,10 @@ class Application(Frame):
                         self.llll9.config(bg="red")            
                         test_Report.write("fail\n")
 
+
+
+                 
+                 
 		################ Sense Reset Pulse #######################
                 #Reset sense
                 self.currentAction.set("Sense reset pulse")
@@ -822,7 +888,7 @@ class Application(Frame):
                 print("starting thread")
                 x=threading.Thread(target=self.reset_sense)
                 x.start()
-                print(threading.active_count())
+                print("threads active: "+str(threading.active_count()))
 
                 count=0
                 while self.timetaken==0 and count<40:
@@ -833,7 +899,7 @@ class Application(Frame):
                         
                 self.stopthread=True
                 x.join()
-                print(threading.active_count())
+                print("threads active: "+str(threading.active_count()))
                 
 
 
@@ -857,11 +923,12 @@ class Application(Frame):
                 time.sleep(1)
                 
                 #Vcoil
+                print("\nReading VCoil on A1") 
                 self.currentAction.set("Reading Vcoil")
                 self.master.update()
 
-                ADC_values[1],testpass=self.read_sampleADC(1, 4.9 , 5.1 )
-                vcoilf ='{:.2f}'.format(ADC_values[1])
+                ADC_value,testpass=self.read_sampleADC(1, 4.9 , 5.1 )
+                vcoilf ='{:.2f}'.format(ADC_value)
                 
                 self.vcoil.set(vcoilf+" V")                        
 
@@ -886,15 +953,16 @@ class Application(Frame):
                 
                 time.sleep(1)
                 #turn off batt
-                GPIO.output(relaybatt , GPIO.LOW)
+                GPIO.output(self.relaybatt , GPIO.LOW)
                 
                         
                 #Vbatt 2
+                print("\nReading Vbatt on A0") 
                 self.currentAction.set("Reading V batt")
                 self.master.update()               
                                 
-                ADC_values[0],testpass=self.read_sampleADC(0, 4 , 4.2 )
-                vbatt2 ='{:.2f}'.format(ADC_values[0])
+                ADC_value,testpass=self.read_sampleADC(0, 4 , 4.2 )
+                vbatt2 ='{:.2f}'.format(ADC_value)
                 
                 self.vbatt2.set(vbatt2+" V")                        
 
@@ -920,8 +988,9 @@ class Application(Frame):
                 
                 test_Report.write("\n\n\n\n")
                 test_Report.close()
-                
-                GPIO.output(relaywirelesscharge, GPIO.LOW)
-                GPIO.output(relaybatt          , GPIO.LOW)
-                GPIO.cleanup()
+                                               
+                GPIO.output(self.relaybatt          , GPIO.LOW) #battery
+                GPIO.output(self.relaywirelesscharge, GPIO.LOW) #wireless charger
+                GPIO.cleanup
+        
 

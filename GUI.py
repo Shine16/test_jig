@@ -25,6 +25,8 @@ class Application(Frame):
                 This will create the window, labels and buttons required.
                 
                 """
+
+                
                 self.master=master
                 self.master.title("Tag Tester")
                 self.master.geometry("480x650")
@@ -371,6 +373,8 @@ class Application(Frame):
                 test_Report.write("Time:\t\t\t"+str(time.asctime())+"\n")
                 
                 initialcurrent = currentsense.currentRead()
+ 
+                
                 initialcurrent = '{:.2f}'.format(initialcurrent.currentReading())+" mA"
                 print(initialcurrent)
                 self.cnew.set(initialcurrent)                
@@ -410,7 +414,7 @@ class Application(Frame):
                                                         
                         #print(time.time()-oldtime) #for debug
                         if(len(listofSamples)>=10):
-                                listofSamples.sort()
+                                listofSamples.sort(reverse=True)
                                 print(listofSamples)
                                 print("success")
                                 self.cprogmin.set(str(listofSamples[8])+ "mA")
@@ -961,7 +965,7 @@ class Application(Frame):
                 self.currentAction.set("Reading V batt")
                 self.master.update()               
                                 
-                ADC_value,testpass=self.read_sampleADC(0, 4 , 4.2 )
+                ADC_value,testpass=self.read_sampleADC(0, 4 , 4.25 )
                 vbatt2 ='{:.2f}'.format(ADC_value)
                 
                 self.vbatt2.set(vbatt2+" V")                        

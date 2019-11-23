@@ -25,8 +25,7 @@ class currentRead():
         def currentReading(self):
             
             #print("Current:       {} mA".format(ina219.current/10))
-            #return self.ina219.current/10 #modified test jig 1 ohm resistor
-            return self.ina219.current #unmodified current sensing
+            return self.ina219.current/10
             
             
         def voltageReading(self):
